@@ -1,7 +1,5 @@
 import type { Route } from "./+types/landing";
 import { Button } from "~/components/Button";
-import { ButtonWithIcon } from "~/components/ButtonWithIcon";
-import { BookOpen } from "lucide-react";
 import React from "react";
 import { Link } from "react-router";
 import { Footer } from "~/components/LandingPage/Footer";
