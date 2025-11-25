@@ -8,6 +8,7 @@ import { ReadingExperience } from "~/components/LandingPage/ReadingExperience";
 import { GenreShowcase } from "~/components/LandingPage/GenreShowcase";
 import { Advantages } from "~/components/LandingPage/Advantages";
 import { Hero } from "~/components/LandingPage/Hero";
+import { Brand } from "~/components/Brand";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -19,14 +20,11 @@ export function meta({}: Route.MetaArgs) {
 export default function Landing() {
   return (
     <div className="min-h-screen bg-black text-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 px-8 py-4 bg-gradient-to-b from-black to-transparent">
-        <div className="flex items-center justify-between">
-          <h1 className="text-white text-xl tracking-wider">Studio VN21</h1>
-          <Link to="/dashboard">
-            <Button>Browse Stories</Button>
-          </Link>
-        </div>
-      </nav>
+      <Brand>
+        <Link to="/dashboard">
+          <Button>Browse Stories</Button>
+        </Link>
+      </Brand>
       <Hero />
       <Advantages />
       <GenreShowcase />
