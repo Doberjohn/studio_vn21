@@ -204,7 +204,7 @@ export function LandingPage() {
             </div>
           </div>
           <div className="text-center text-gray-500 text-sm">
-            © {new Date().getFullYear()} Studio VN21. All rights reserved. Designed and developed by <a className="underline" href="https://www.recurssive.com">Recurssive</a>.
+            © {new Date().getFullYear()} Studio VN21. All right reserved. Designed and developed by <a className="underline" href="https://www.recurssive.com">Recurssive</a>.
           </div>
         </div>
       </footer>
