@@ -2,7 +2,7 @@ import React from 'react'
 
 export function ButtonWithIcon(props: React.ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
-    <button className="flex items-center gap-3 bg-red-600 text-white px-10 py-4 rounded text-xl hover:bg-red-700 transition-colors mx-auto cursor-pointer">
+    <button className="flex items-center gap-3 bg-red-600 text-white px-10 py-4 rounded text-xl hover:bg-red-700 transition-colors cursor-pointer">
       {props.children}
     </button>
   )
