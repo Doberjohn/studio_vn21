@@ -18,7 +18,7 @@ export function ReadingExperience() {
           </div>
           <div className="relative h-96 rounded-lg overflow-hidden">
             <img
-              src={"./tablet.jpg"}
+              src={"./tablet.webp"}
               alt={"Landing Banner"}
               className={"w-full h-full object-cover"}
             />

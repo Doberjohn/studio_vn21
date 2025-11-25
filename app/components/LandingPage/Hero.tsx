@@ -8,7 +8,7 @@ export function Hero() {
     <div className="relative h-screen w-full">
       <div className="absolute inset-0">
         <img
-          src={"./landing_banner.jpg"}
+          src={"./landing_banner.webp"}
           alt={"Landing Banner"}
           className={"w-full h-full object-cover"}
         />
