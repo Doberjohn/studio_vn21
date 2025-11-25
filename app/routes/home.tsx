@@ -3,7 +3,7 @@ import { LandingPage } from "~/landing";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Studio VN21 Landing" },
+    { title: "Studio VN21" },
     { name: "description", content: "Welcome to Studio VN21!" },
   ];
 }
