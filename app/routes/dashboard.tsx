@@ -7,7 +7,9 @@ import {
   stories,
   getFeaturedStory,
   getStoriesByGenre,
+  getStoriesByCollection,
   genres,
+  collections,
 } from "~/data/stories";
 import type { Story } from "~/types/story";
 
@@ -35,6 +37,20 @@ export default function App() {
           stories={stories.slice(0, 6)}
           onRead={handleReadStory}
         />
+
+        {collections.map((collection) => {
+          const collectionStories = getStoriesByCollection(collection);
+          if (collectionStories.length === 0) return null;
+
+          return (
+            <StoryRow
+              key={collection}
+              title={collection}
+              stories={collectionStories}
+              onRead={handleReadStory}
+            />
+          );
+        })}
 
         {genres.map((genre) => {
           const genreStories = getStoriesByGenre(genre);

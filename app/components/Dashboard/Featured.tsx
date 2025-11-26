@@ -1,5 +1,5 @@
-import { Play, Info } from "lucide-react";
 import type { Story } from "~/types/story";
+import { Button } from "~/components/Button";
 
 interface FeaturedProps {
   story: Story;
@@ -26,17 +26,9 @@ export function Featured({ story, onRead }: FeaturedProps) {
           <p className="text-gray-300 mb-2">by {story.author}</p>
           <p className="text-white mb-6 line-clamp-3">{story.description}</p>
           <div className="flex gap-4">
-            <button
-              onClick={() => onRead(story)}
-              className="flex items-center gap-2 bg-white text-black px-8 py-3 rounded hover:bg-gray-200 transition-colors"
-            >
-              <Play className="w-5 h-5" fill="currentColor" />
+            <Button onClick={() => onRead(story)}>
               Read Now
-            </button>
-            <button className="flex items-center gap-2 bg-gray-600/70 text-white px-8 py-3 rounded hover:bg-gray-600 transition-colors">
-              <Info className="w-5 h-5" />
-              More Info
-            </button>
+            </Button>
           </div>
         </div>
       </div>

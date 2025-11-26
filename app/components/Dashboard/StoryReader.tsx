@@ -1,6 +1,7 @@
 import { X, Clock, User } from "lucide-react";
 import { useEffect } from "react";
 import type { Story } from "~/types/story";
+import { Button } from "~/components/Button";
 
 interface StoryReaderProps {
   story: Story;
@@ -53,12 +54,9 @@ export function StoryReader({ story, onClose }: StoryReaderProps) {
           <div className="mt-12 pt-8 border-t border-gray-800">
             <p className="text-gray-400 text-center">The End</p>
             <div className="flex justify-center gap-4 mt-6">
-              <button
-                onClick={onClose}
-                className="px-6 py-2 bg-white text-black rounded hover:bg-gray-200 transition-colors"
-              >
+              <Button onClick={onClose}>
                 Browse More Stories
-              </button>
+              </Button>
             </div>
           </div>
         </div>

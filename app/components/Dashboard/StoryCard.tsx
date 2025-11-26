@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Play, Clock } from "lucide-react";
+import { Clock } from "lucide-react";
 import type { Story } from "~/types/story";
 
 interface StoryCardProps {
@@ -37,16 +37,6 @@ export function StoryCard({ story, onRead }: StoryCardProps) {
               <Clock className="w-3 h-3" />
               <span>{story.duration}</span>
             </div>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onRead(story);
-              }}
-              className="flex items-center gap-1 bg-white text-black px-3 py-1.5 rounded text-sm hover:bg-gray-200 transition-colors"
-            >
-              <Play className="w-3 h-3" fill="currentColor" />
-              Read
-            </button>
           </div>
         </div>
       )}

@@ -6,6 +6,7 @@ export const stories: Story[] = [
     title: "The Enchanted Grove",
     author: "Elena Rivers",
     genre: "Fantasy",
+    collection: "Stories for Impact",
     description:
       "A young mage discovers a hidden grove where time stands still and ancient magic awakens.",
     coverImage:
@@ -22,12 +23,14 @@ Lyra stepped forward, her heart pounding. As her fingers touched the water's sur
 "Welcome, Lyra," a voice echoed from everywhere and nowhere. "We have been waiting."
 
 She turned, staff raised, but there was no one there. Only the trees, the water, and the overwhelming sense that her life had just changed forever. The grove had chosen her, and there was no turning back now.`,
+    publishDate: "26/11/2024",
   },
   {
     id: "2",
     title: "Shadows on Baker Street",
     author: "Marcus Webb",
     genre: "Mystery",
+    collection: "Stories for Impact",
     description:
       "A detective's last case leads him through the dark alleys of a city that never sleeps.",
     coverImage:
@@ -44,12 +47,14 @@ Raymond had studied every detail, followed every lead, and come up empty every t
 The clock struck midnight. A figure emerged from the apartment building, umbrella in hand, walking with purpose toward the alley. Raymond's breath caught. He recognized that walk, that silhouette.
 
 It couldn't be. But as the figure stepped into the light of a streetlamp, Raymond's world shattered. Some truths, he realized, were better left in shadow.`,
+    publishDate: "26/11/2024",
   },
   {
     id: "3",
     title: "Letters in the Wind",
     author: "Sophie Chen",
     genre: "Romance",
+    collection: "Stories for Impact",
     description:
       "Two strangers connect through letters left at a seaside café, never knowing they pass each other every day.",
     coverImage:
@@ -68,12 +73,14 @@ What she didn't see was the man who walked in five minutes after she left. He ha
 What neither of them knew was that they rode the same bus every morning, sat in adjacent booths every Wednesday, and had been looking for each other in all the wrong places.
 
 Sometimes love is patient. Sometimes it's already here, waiting for us to turn around.`,
+    publishDate: "26/11/2024",
   },
   {
     id: "4",
     title: "The Last Transmission",
     author: "Dr. James Ko",
     genre: "Science Fiction",
+    collection: "Stories for Impact",
     description:
       "An astronaut receives a mysterious signal from Earth, 50 years after the planet went silent.",
     coverImage:
@@ -98,12 +105,14 @@ The message ended. Sarah stared at the speaker, her hands trembling.
 ARIA's calm voice broke the silence: "Commander, we're still three months from Earth. What are your orders?"
 
 Sarah took a deep breath. Some questions, she realized, could only be answered by going forward into the unknown.`,
+    publishDate: "26/11/2024",
   },
   {
     id: "5",
     title: "The Whispering House",
     author: "Victoria Crane",
     genre: "Horror",
+    collection: "Scary stories to keep you awake",
     description:
       "Moving into her grandmother's estate, Clara discovers that some family secrets should stay buried.",
     coverImage:
@@ -132,12 +141,14 @@ Clara dropped the journal, her heart racing. She ran for the door, but it had cl
 The lights went out, and in the darkness, Clara heard the sound of many voices, all whispering the same thing: "Stay. Stay. Stay."
 
 She understood then. The house wasn't haunted. It was alive. And it was very, very hungry.`,
+    publishDate: "26/11/2024",
   },
   {
     id: "6",
     title: "Summit",
     author: "Alex Morrison",
     genre: "Adventure",
+    collection: "Stories for Impact",
     description:
       "Two rival climbers must work together to survive an unexpected storm on the world's highest peak.",
     coverImage:
@@ -168,12 +179,14 @@ Jack laughed, the sound raw and real. "Same. Seems pretty stupid now, doesn't it
 "Incredibly stupid."
 
 They sat in comfortable silence, watching the mountain that had tried to kill them. Some summits, they realized, had nothing to do with peaks. Some were about finding your way down, together, and being grateful for solid ground beneath your feet.`,
+    publishDate: "26/11/2024",
   },
   {
     id: "7",
     title: "The Vanishing Act",
     author: "Thomas Black",
     genre: "Thriller",
+    collection: "Scary stories to keep you awake",
     description:
       "A magician's greatest trick becomes all too real when people start disappearing from his sold-out shows.",
     coverImage:
@@ -206,12 +219,14 @@ He turned to the back of the theater, praying to see Chen's face. But there was 
 Sarah's voice rose above the rest: "Marcus, where are we? Marcus, what did you DO?"
 
 Some illusions, Marcus realized with growing horror, were never meant to be real.`,
+    publishDate: "26/11/2024",
   },
   {
     id: "8",
     title: "The Memory Keeper",
     author: "Olivia Hart",
     genre: "Drama",
+    collection: "Stories for Impact",
     description:
       "An elderly woman with dementia writes letters to her younger self, piecing together a life she's forgetting.",
     coverImage:
@@ -243,20 +258,19 @@ You are loved. Remember that, even when I can't.
 
 With all my heart (while I still remember where to find it),
 Margaret at Eighty-Three`,
+    publishDate: "26/11/2024",
   },
   {
     id: "the_man_in_the_window",
     title: "The man in the window",
     author: "Anna Maria Lagortsi",
-    genre: "Horror",
+    genre: "Thriller",
+    collection: "Scary stories to keep you awake",
     description:
-      "On Halloween night, as his family celebrates joyfully, George is haunted by guilt and a blood-soaked stranger who won't stop asking for help.",
+      "On Halloween night, as his family celebrates joyfully, George is haunted by guilt and a blood-soaked stranger.",
     coverImage:
       "https://i.ibb.co/Myr4cfxk/8d02a7c6007fa661b2a4fc416b4b7772-The-man-in-the-window-mobile.webp",
     duration: "3 min read",
-    featured: true,
-    featuredCoverImage:
-      "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
     content: `It’s Halloween night. The kids are eating their candy while humorously discussing their trick-or-treat experience. The living room is messy and full of chocolate wraps and pumpkin heads. Their mother, Olivia, is dancing to the rhythm of the music on the radio, waiting for the pie to get ready. She looks happy. This is the first thing that George notices about his wife.
 
 Everyone is having a great time. Except for him. What if the man comes back? Should he call the police? His hands are trembling as he feels cold sweat running down his back. His daughter, Emma, approaches and offers him her cookie. George tries to fake a smile and caresses her hair. He takes a small bite and puts it on the plate in front of him.
@@ -270,7 +284,78 @@ George starts laughing nervously, claps his hands, and gets closer to the table 
 Suddenly, the doorbell rings. Emma runs to the door and opens it. Their aunt, Martha, comes inside. “You can’t believe what I just witnessed!” Martha takes off her coat, and Olivia helps her to put it in the closet. “Did your kids pull another prank on you?” Olivia laughs but gets caught by Martha’s expression. “I wish!” Martha sits next to George and kisses her brother on the cheek. “As I was driving to get here, I saw two parked police cars and tons of people standing on the street near George’s store.”
 
 George’s eyes widen as he hears these words. “They told me someone hit a man with his car and didn’t stop to help him. He is dead, obviously!” George feels like he is ready to throw up. He stands up and runs to the bathroom. He throws water on his face. Suddenly, he feels a hand touching his back. George starts shaking as he hears the exact words again and again. “Help me! Please help me!” He starts crying. George turns around and realizes that it’s Olivia. He can understand by her look that she knows. He is afraid. What is going to happen? Olivia hugs him, but she is already gone when he tries to put his arms around her. George is now in the bathroom, shocked but not alone. The man is always going to be there.`,
+    publishDate: "30/10/2022",
+    featured: true,
+    featuredCoverImage: "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
   },
+  {
+    id: "spellbent",
+    title: "Spellbent",
+    author: "John Fanidis",
+    genre: "Drama",
+    collection: "100-word drabbles for speed readers",
+    description:
+      "An old street violinist enchants a growing crowd with melodies that heal hearts and unite strangers.",
+    coverImage:
+      "https://i.ibb.co/Q39HPgyL/00a43d40a305a9efbdcc6b9e239bc396-Spellbent-mobile.webp",
+    duration: "30 sec read",
+    content: `The old man sat on the bench, his hands resting on the smooth wood of his violin. He used to play in the streets, lifting the spirits of those he encountered. A small crowd started gathering, drawn in by the bittersweet melodies of his instrument.
+
+His music reached deep within each listener, filling them with hope and joy. Some started dancing, others singing along. His music had the power to bring people together and heal the wounds of the soul.
+
+And as long as he had his violin, he would continue to magically spellbind everyone lucky enough to meet him.`,
+    publishDate: "19/04/2023",
+  },
+  {
+    id: "healing_touch",
+    title: "Healing Touch - Tales of a Therapist",
+    author: "Kostas Diplaris",
+    genre: "Drama",
+    collection: "100-word drabbles for speed readers",
+    description:
+      "As Mat grieves for his ex-wife, a quiet moment of connection and unexpected comfort steers him toward seeking solace.",
+    coverImage:
+      "https://i.ibb.co/C5kc3YNf/e7d745d76aa569255532e5f4daf7f12d-Healing-touch-mobile.webp",
+    duration: "30 sec read",
+    content: `Mat started talking about his ex-wife. He showed me a photo of her, such a beautiful creature! I lied to him about how he could find a better one and the need to be alone. He started crying out loud and mumbling about how much he missed her. 
+
+I sat beside him, hugged him, and kissed him softly. In an instant, he stopped crying, looked me in the eye, and asked, "What was that?" smiling subtly. I advised him to let his wife be and call his mother. To see her, hug her, and ask her to do the same.`,
+    publishDate: "19/04/2023",
+  },
+  {
+    id: "a_spark_of_creativity",
+    title: "A spark of creativity",
+    author: "John Fanidis",
+    genre: "Drama",
+    collection: "100-word drabbles for speed readers",
+    description:
+      "A wedding photographer, once fueled by passion, now hides behind the lens capturing other people's joy.",
+    coverImage:
+      "https://i.ibb.co/dwfxd9cm/f764ad302843d727bf8764e21009e367-A-spark-of-creativity-mobile.webp",
+    duration: "30 sec read",
+    content: `They all look so happy. And why wouldn’t they be? It’s the happiest day of their life and one more “worst day” of mine. After all these years, I 've gotten used to asking them to smile at me. Though, I haven’t been able to smile myself behind the camera.
+
+I am trapped in a job I used to love, and now it makes me sick. Photography was my life and passion, but I traded my imagination for a salary. Thus, weddings had my creativity run dry.
+
+I fear the day my love for my art will cease to exist.`,
+    publishDate: "19/04/2023",
+  },
+  {
+    id: "abyss",
+    title: "Abyss",
+    author: "Kostas Diplaris",
+    genre: "Drama",
+    collection: "100-word drabbles for speed readers",
+    description:
+      "Wounded, naked, and alone in a forest, Mary forces her broken body to move—tree by tree—driven by an unknown will to survive.",
+    coverImage:
+      "https://i.ibb.co/x88zdTZq/bcee4dda37a88643e93bdeddebc6c9d4-Abyss-mobile.webp",
+    duration: "30 sec read",
+    content: `Mary woke up inside the forest. She groped the ground with her fingertips. She took two large breaths and decided to rise to a sitting position. She looked at herself. Her body was naked and full of wounds, but the time had come for her to get up.
+
+Her feet couldn’t support her. She trusted her body to the nearest giant tree trunk. She leaned into it and let out her insides. She wiped the vomit off her face with her forearm. Slowly but steadily, she started to walk away from the supporting tree. Until she found the next one…`,
+    publishDate: "19/04/2023",
+  }
 ];
 
 export const getStoriesByGenre = (genre: string): Story[] => {
@@ -281,13 +366,22 @@ export const getFeaturedStory = (): Story | undefined => {
   return stories.find((story) => story.featured);
 };
 
+export const getStoriesByCollection = (collection: string): Story[] => {
+  return stories.filter((story) => story.collection === collection);
+};
+
 export const genres = [
   "Fantasy",
   "Mystery",
   "Romance",
   "Science Fiction",
-  "Horror",
   "Adventure",
   "Thriller",
-  "Drama",
+  "Drama"
 ];
+
+export const collections = [
+  "100-word drabbles for speed readers",
+  "Scary stories to keep you awake",
+  "Stories for Impact",
+]
