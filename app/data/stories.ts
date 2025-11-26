@@ -255,7 +255,8 @@ Margaret at Eighty-Three`,
       "https://i.ibb.co/Myr4cfxk/8d02a7c6007fa661b2a4fc416b4b7772-The-man-in-the-window-mobile.webp",
     duration: "3 min read",
     featured: true,
-    featuredCoverImage: "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
+    featuredCoverImage:
+      "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
     content: `It’s Halloween night. The kids are eating their candy while humorously discussing their trick-or-treat experience. The living room is messy and full of chocolate wraps and pumpkin heads. Their mother, Olivia, is dancing to the rhythm of the music on the radio, waiting for the pie to get ready. She looks happy. This is the first thing that George notices about his wife.
 
 Everyone is having a great time. Except for him. What if the man comes back? Should he call the police? His hands are trembling as he feels cold sweat running down his back. His daughter, Emma, approaches and offers him her cookie. George tries to fake a smile and caresses her hair. He takes a small bite and puts it on the plate in front of him.
