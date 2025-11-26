@@ -11,7 +11,6 @@ export const stories: Story[] = [
     coverImage:
       "https://images.unsplash.com/photo-1763321402439-41eb2a0c7e7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYW50YXN5JTIwbWFnaWNhbCUyMGZvcmVzdHxlbnwxfHx8fDE3NjQwNDk0MjB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
     duration: "15 min read",
-    featured: true,
     content: `The morning mist clung to the forest floor like a living thing, weaving between ancient oaks and twisted brambles. Lyra had been walking for hours, her staff glowing faintly in the pre-dawn darkness.
 
 She shouldn't be here. The Enchanted Grove was forbidden—a place spoken of only in whispers among the elder mages. But the dreams had been relentless, calling her deeper into the wilderness with each passing night.
@@ -244,6 +243,32 @@ You are loved. Remember that, even when I can't.
 
 With all my heart (while I still remember where to find it),
 Margaret at Eighty-Three`,
+  },
+  {
+    id: "the_man_in_the_window",
+    title: "The man in the window",
+    author: "Anna Maria Lagortsi",
+    genre: "Horror",
+    description:
+      "On Halloween night, as his family celebrates joyfully, George is haunted by guilt and a blood-soaked stranger who won't stop asking for help.",
+    coverImage:
+      "https://i.ibb.co/Myr4cfxk/8d02a7c6007fa661b2a4fc416b4b7772-The-man-in-the-window-mobile.webp",
+    duration: "3 min read",
+    featured: true,
+    featuredCoverImage: "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
+    content: `It’s Halloween night. The kids are eating their candy while humorously discussing their trick-or-treat experience. The living room is messy and full of chocolate wraps and pumpkin heads. Their mother, Olivia, is dancing to the rhythm of the music on the radio, waiting for the pie to get ready. She looks happy. This is the first thing that George notices about his wife.
+
+Everyone is having a great time. Except for him. What if the man comes back? Should he call the police? His hands are trembling as he feels cold sweat running down his back. His daughter, Emma, approaches and offers him her cookie. George tries to fake a smile and caresses her hair. He takes a small bite and puts it on the plate in front of him.
+
+“Hey, George!” Olivia shouts as she puts a cigarette in her mouth. George looks at her and smiles as she blows him a kiss. She keeps dancing with his mother-in-law. He clenches his jaw. He can’t just ruin the mood of the party. He feels the paintings on the walls staring at him. Suddenly, a shadow outside the window catches his eye. George stands up and starts going there.
+
+The weather is windy. He can notice tiny rain droplets on the leaves of Olivia’s flowers that adorn their small veranda. Suddenly, a man who is drenched in blood hits his hands on the window and screams, “Help me!” George stomps back and knocks off the vase behind him. Olivia runs to him and grabs him by his shoulders. “Are you okay? What happened?” she asks as she tries to calm him down. George takes deep breaths and shakes his head. “Everything’s fine, my love.” The kids have stopped talking, and everyone is looking at him. “Guys, relax! I just got scared by Ms. Anna’s cat.”
+
+George starts laughing nervously, claps his hands, and gets closer to the table as he pours a glass of whiskey and drinks it as fast as possible. Olivia stares at him but gets distracted by the oven sound. She clears her throat and goes to the kitchen. George turns up the radio volume while Olivia brings the pie to the table and starts serving each family member. In a moment, George looks up and notices that the man he saw a few minutes ago is staring at him by the other window of the living room. He decides to keep quiet. The man touches the glass gently and mouths the words “Help me” again. George looks down as his eyes start to get teary. His daughter grabs his hand to calm him down. He smiles at her and nods his head.
+
+Suddenly, the doorbell rings. Emma runs to the door and opens it. Their aunt, Martha, comes inside. “You can’t believe what I just witnessed!” Martha takes off her coat, and Olivia helps her to put it in the closet. “Did your kids pull another prank on you?” Olivia laughs but gets caught by Martha’s expression. “I wish!” Martha sits next to George and kisses her brother on the cheek. “As I was driving to get here, I saw two parked police cars and tons of people standing on the street near George’s store.”
+
+George’s eyes widen as he hears these words. “They told me someone hit a man with his car and didn’t stop to help him. He is dead, obviously!” George feels like he is ready to throw up. He stands up and runs to the bathroom. He throws water on his face. Suddenly, he feels a hand touching his back. George starts shaking as he hears the exact words again and again. “Help me! Please help me!” He starts crying. George turns around and realizes that it’s Olivia. He can understand by her look that she knows. He is afraid. What is going to happen? Olivia hugs him, but she is already gone when he tries to put his arms around her. George is now in the bathroom, shocked but not alone. The man is always going to be there.`,
   },
 ];
 

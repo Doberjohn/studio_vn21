@@ -8,4 +8,5 @@ export interface Story {
   duration: string;
   content: string;
   featured?: boolean;
+  featuredCoverImage?: string;
 }

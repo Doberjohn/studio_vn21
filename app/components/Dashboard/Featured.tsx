@@ -11,7 +11,7 @@ export function Featured({ story, onRead }: FeaturedProps) {
     <div className="relative h-[80vh] w-full">
       <div className="absolute inset-0">
         <img
-          src={story.coverImage}
+          src={story.featuredCoverImage}
           alt={story.title}
           className="w-full h-full object-cover"
         />
