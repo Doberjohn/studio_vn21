@@ -2,6 +2,7 @@ import { X, Clock, User } from "lucide-react";
 import { useEffect } from "react";
 import type { Story } from "~/types/story";
 import { Button } from "~/components/Button";
+import { readingTime } from "reading-time-estimator";
 
 interface StoryReaderProps {
   story: Story;
@@ -28,7 +29,7 @@ export function StoryReader({ story, onClose }: StoryReaderProps) {
           </button>
 
           <div className="mb-8">
-            <div className="text-green-400 mb-2">{story.genre}</div>
+            <div className="text-green-400 mb-2">{story.genres.join(' | ')}</div>
             <h1 className="text-white mb-3">{story.title}</h1>
             <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
               <div className="flex items-center gap-1">
@@ -37,15 +38,15 @@ export function StoryReader({ story, onClose }: StoryReaderProps) {
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4" />
-                <span>{story.duration}</span>
+                <span>{readingTime(story.content).text}</span>
               </div>
             </div>
-            <p className="text-gray-300 italic">{story.description}</p>
+            <p className="text-gray-300 text-lg italic">{story.description}</p>
           </div>
 
           <div className="prose prose-invert max-w-none">
             {story.content.split("\n\n").map((paragraph, index) => (
-              <p key={index} className="text-gray-200 mb-4 leading-relaxed">
+              <p key={index} className="text-gray-200 text-lg mb-4 leading-relaxed">
                 {paragraph}
               </p>
             ))}

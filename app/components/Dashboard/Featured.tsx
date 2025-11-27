@@ -21,8 +21,8 @@ export function Featured({ story, onRead }: FeaturedProps) {
 
       <div className="relative h-full flex items-center px-8 md:px-16">
         <div className="max-w-2xl">
-          <div className="text-green-400 mb-2">{story.genre}</div>
-          <h2 className="text-white mb-4">{story.title}</h2>
+          <div className="text-green-400 mb-2">{story.genres.join(' | ')}</div>
+          <p className="text-white text-4xl mb-4">{story.title}</p>
           <p className="text-gray-300 mb-2">by {story.author}</p>
           <p className="text-white mb-6 line-clamp-3">{story.description}</p>
           <div className="flex gap-4">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Clock } from "lucide-react";
 import type { Story } from "~/types/story";
+import { readingTime } from "reading-time-estimator";
 
 interface StoryCardProps {
   story: Story;
@@ -35,7 +36,7 @@ export function StoryCard({ story, onRead }: StoryCardProps) {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-1 text-gray-400 text-xs">
               <Clock className="w-3 h-3" />
-              <span>{story.duration}</span>
+              <span>{readingTime(story.content).text}</span>
             </div>
           </div>
         </div>
