@@ -6,6 +6,7 @@ export interface Story {
   collections: string[];
   description: string;
   coverImage: string;
+  desktopCoverImage?: string;
   content: string;
   publishDate: string;
   featured?: boolean;

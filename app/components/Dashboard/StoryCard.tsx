@@ -13,21 +13,30 @@ export function StoryCard({ story, onRead }: StoryCardProps) {
 
   return (
     <div
-      className="group relative cursor-pointer transition-transform duration-300 hover:scale-110 hover:z-10"
+      className="group relative ml-5 cursor-pointer transition-transform duration-300 hover:scale-110 hover:z-10"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onRead(story)}
     >
       <div className="aspect-[2/3] md:aspect-video rounded overflow-hidden bg-gray-800">
-        <img
-          src={story.coverImage}
-          alt={story.title}
-          className="w-full h-full object-cover"
-        />
+        <picture>
+          {story.desktopCoverImage && (
+            <source
+              media="(min-width: 768px)"
+              srcSet={story.desktopCoverImage}
+            />
+          )}
+          <img
+            src={story.coverImage}
+            alt={story.title}
+            className="w-full h-full object-cover"
+          />
+        </picture>
       </div>
 
       {isHovered && (
-        <div className="absolute inset-0 bg-black/90 rounded flex flex-col justify-end p-4 transition-opacity duration-300">
+        <div
+          className="absolute inset-0 bg-black/90 rounded flex flex-col justify-end p-4 transition-opacity duration-300">
           <h3 className="text-white mb-1">{story.title}</h3>
           <p className="text-gray-400 text-sm mb-2">by {story.author}</p>
           <p className="text-gray-300 text-sm line-clamp-2 mb-3">

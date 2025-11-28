@@ -39,7 +39,7 @@ export function StoryRow({ title, stories, onRead }: StoryRowProps) {
 
   return (
     <div className="px-8 md:px-16 mb-8 group/row">
-      <h2 className="text-white mb-4">{title}</h2>
+      <h2 className="text-white text-xl mb-4">{title}</h2>
       <div className="relative">
         {showLeftArrow && (
           <button
