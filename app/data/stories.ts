@@ -443,7 +443,7 @@ George’s eyes widen as he hears these words. “They told me someone hit a man
   {
     id: "1",
     title: "The Enchanted Grove",
-    author: "Elena Rivers",
+    author: "Kostas Diplaris",
     genres: ["Fantasy"],
     collections: ["Stories for Impact"],
     description:
@@ -466,7 +466,7 @@ She turned, staff raised, but there was no one there. Only the trees, the water,
   {
     id: "2",
     title: "Shadows on Baker Street",
-    author: "Marcus Webb",
+    author: "John Fanidis",
     genres: ["Mystery"],
     collections: ["Stories for Impact"],
     description:
@@ -489,7 +489,7 @@ It couldn't be. But as the figure stepped into the light of a streetlamp, Raymon
   {
     id: "3",
     title: "Letters in the Wind",
-    author: "Sophie Chen",
+    author: "Kostas Diplaris",
     genres: ["Romance"],
     collections: ["Stories for Impact"],
     description:
@@ -514,7 +514,7 @@ Sometimes love is patient. Sometimes it's already here, waiting for us to turn a
   {
     id: "4",
     title: "The Last Transmission",
-    author: "Dr. James Ko",
+    author: "John Fanidis",
     genres: ["Science Fiction"],
     collections: ["Stories for Impact"],
     description:
@@ -545,7 +545,7 @@ Sarah took a deep breath. Some questions, she realized, could only be answered b
   {
     id: "5",
     title: "The Whispering House",
-    author: "Victoria Crane",
+    author: "Kostas Diplaris",
     genres: ["Horror"],
     collections: ["Scary stories to keep you awake"],
     description:
@@ -580,7 +580,7 @@ She understood then. The house wasn't haunted. It was alive. And it was very, ve
   {
     id: "6",
     title: "Summit",
-    author: "Alex Morrison",
+    author: "John Fanidis",
     genres: ["Adventure"],
     collections: ["Stories for Impact"],
     description:
@@ -617,7 +617,7 @@ They sat in comfortable silence, watching the mountain that had tried to kill th
   {
     id: "7",
     title: "The Vanishing Act",
-    author: "Thomas Black",
+    author: "Kostas Diplaris",
     genres: ["Thriller"],
     collections: ["Scary stories to keep you awake"],
     description:
@@ -656,7 +656,7 @@ Some illusions, Marcus realized with growing horror, were never meant to be real
   {
     id: "8",
     title: "The Memory Keeper",
-    author: "Olivia Hart",
+    author: "John Fanidis",
     genres: ["Drama"],
     collections: ["Stories for Impact"],
     description:
