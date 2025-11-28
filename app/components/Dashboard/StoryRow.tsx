@@ -57,7 +57,7 @@ export function StoryRow({ title, stories, onRead }: StoryRowProps) {
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {stories.map((story) => (
-            <div key={story.id} className="flex-shrink-0 w-48">
+            <div key={story.id} className="flex-shrink-0 w-48 md:w-100">
               <StoryCard story={story} onRead={onRead} />
             </div>
           ))}

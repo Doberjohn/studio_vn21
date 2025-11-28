@@ -2,12 +2,14 @@ import type { Route } from "./+types/landing";
 import { Button } from "~/components/Button";
 import React from "react";
 import { Link } from "react-router";
-import { Footer } from "~/components/LandingPage/Footer";
-import { CTA } from "~/components/LandingPage/CTA";
-import { ReadingExperience } from "~/components/LandingPage/ReadingExperience";
-import { GenreShowcase } from "~/components/LandingPage/GenreShowcase";
-import { Advantages } from "~/components/LandingPage/Advantages";
-import { Hero } from "~/components/LandingPage/Hero";
+import {
+  Advantages,
+  CTA,
+  Footer,
+  Hero,
+  GenreShowcase,
+  ReadingExperience,
+} from "~/components/LandingPage";
 import { Brand } from "~/components/Brand";
 
 export function meta({}: Route.MetaArgs) {

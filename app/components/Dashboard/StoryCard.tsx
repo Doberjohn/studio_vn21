@@ -18,7 +18,7 @@ export function StoryCard({ story, onRead }: StoryCardProps) {
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => onRead(story)}
     >
-      <div className="aspect-[2/3] rounded overflow-hidden bg-gray-800">
+      <div className="aspect-[2/3] md:aspect-video rounded overflow-hidden bg-gray-800">
         <img
           src={story.coverImage}
           alt={story.title}

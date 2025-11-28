@@ -10,7 +10,7 @@ export const stories: Story[] = [
     description:
       "Talia Chen, raised in a cramped apartment in Ascension Tower, rises to become a lawyer but is haunted by the injustices faced by lower-floor residents, motivating her to fight for those displaced by the city's elite.",
     coverImage:
-      "https://i.ibb.co/G3kwMXC6/c39aefa015c3930f7a88932d3d7070f2-75th-floor-mobile.webp",
+      "https://i.ibb.co/rKdP3X7D/f6469ec12e857541f2ae5101f69a3c3f-75th-floor.webp",
     content: `Talia leaned her forehead against the glass, the chill seeping into her skin as she watched hovercars drift between towers like fireflies trapped in a jar. Seventy-five floors up, the city pulsed below in streaks of violet and ember-orange. From here, it looked almost beautiful. When she was a child, floor thirty-nine had no windows. Just recycled air, soft mildew, and the low electrical hum of a dozen lives stacked too close.
 
 Back then, she used to stare at the elevator map in the corridor. The numbers blinked up into the seventies and beyond, unreachable digits she treated like constellations. Mythical. Remote. She hadn’t known what was up there, only that it wasn’t grease, or ration coupons, or parents who never stopped coughing.
@@ -438,7 +438,8 @@ Suddenly, the doorbell rings. Emma runs to the door and opens it. Their aunt, Ma
 George’s eyes widen as he hears these words. “They told me someone hit a man with his car and didn’t stop to help him. He is dead, obviously!” George feels like he is ready to throw up. He stands up and runs to the bathroom. He throws water on his face. Suddenly, he feels a hand touching his back. George starts shaking as he hears the exact words again and again. “Help me! Please help me!” He starts crying. George turns around and realizes that it’s Olivia. He can understand by her look that she knows. He is afraid. What is going to happen? Olivia hugs him, but she is already gone when he tries to put his arms around her. George is now in the bathroom, shocked but not alone. The man is always going to be there.`,
     publishDate: "30/10/2022",
     featured: true,
-    featuredCoverImage: "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
+    featuredCoverImage:
+      "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
   },
   {
     id: "1",
@@ -515,12 +516,12 @@ Sometimes love is patient. Sometimes it's already here, waiting for us to turn a
     id: "4",
     title: "The Last Transmission",
     author: "John Fanidis",
-    genres: ["Science Fiction"],
+    genres: ["Science Fiction", "Adventure"],
     collections: ["Stories for Impact"],
     description:
       "An astronaut receives a mysterious signal from Earth, 50 years after the planet went silent.",
     coverImage:
-      "https://images.unsplash.com/photo-1720736005617-db0603b42149?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2llbmNlJTIwZmljdGlvbiUyMHNwYWNlfGVufDF8fHx8MTc2NDA4MDMzNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      "https://i.ibb.co/r2MZLKSN/20251128-earth-from-inside-a-spaceship-illustratrion-U3.jpg",
     content: `Commander Sarah Chen had been alone for fifty years. Well, not entirely alone.the ship's AI, ARIA, was decent company. But it wasn't the same as human contact.
 
 Earth had gone silent in 2087, right in the middle of humanity's first interstellar colonization mission. No warning, no explanation. Just... silence. Sarah and her crew had debated turning back, but they were already past the point of no return. They'd continued to Proxima Centauri, established the colony, and Sarah had volunteered to make the return journey.
@@ -694,21 +695,21 @@ Margaret at Eighty-Three`,
 ];
 
 export const collections = [
+  "Stories for Impact",
   "100-word drabbles for speed readers",
   "Scary stories to keep you awake",
-  "Stories for Impact",
-  "Rhyme Time: Poet's Corner"
+  // "Rhyme Time: Poet's Corner"
 ];
 
 export const genres = [
+  "Drama",
   "Fantasy",
+  // "Romance",
   "Mystery",
-  "Romance",
   "Science Fiction",
   "Adventure",
   "Thriller",
   "Horror",
-  "Drama",
   //"Dystopian"
 ];
 

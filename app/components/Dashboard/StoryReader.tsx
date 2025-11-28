@@ -29,7 +29,9 @@ export function StoryReader({ story, onClose }: StoryReaderProps) {
           </button>
 
           <div className="mb-8">
-            <div className="text-green-400 mb-2">{story.genres.join(' | ')}</div>
+            <div className="text-green-400 mb-2">
+              {story.genres.join(" | ")}
+            </div>
             <h1 className="text-white mb-3">{story.title}</h1>
             <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
               <div className="flex items-center gap-1">
@@ -46,7 +48,10 @@ export function StoryReader({ story, onClose }: StoryReaderProps) {
 
           <div className="prose prose-invert max-w-none">
             {story.content.split("\n\n").map((paragraph, index) => (
-              <p key={index} className="text-gray-200 text-lg mb-4 leading-relaxed">
+              <p
+                key={index}
+                className="text-gray-200 text-lg mb-4 leading-relaxed"
+              >
                 {paragraph}
               </p>
             ))}
@@ -55,9 +60,7 @@ export function StoryReader({ story, onClose }: StoryReaderProps) {
           <div className="mt-12 pt-8 border-t border-gray-800">
             <p className="text-gray-400 text-center">The End</p>
             <div className="flex justify-center gap-4 mt-6">
-              <Button onClick={onClose}>
-                Browse More Stories
-              </Button>
+              <Button onClick={onClose}>Browse More Stories</Button>
             </div>
           </div>
         </div>

@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Navbar } from "~/components/Navbar";
-import { Featured } from "~/components/Dashboard/Featured";
-import { StoryRow } from "~/components/Dashboard/StoryRow";
-import { StoryReader } from "~/components/Dashboard/StoryReader";
+import { Featured, StoryRow, StoryReader } from "~/components/Dashboard";
 import {
   stories,
   getFeaturedStory,
@@ -34,7 +32,7 @@ export default function App() {
       <div className="relative z-10 -mt-32">
         <StoryRow
           title="Trending Now"
-          stories={stories.slice(0, 6)}
+          stories={stories.slice(0, 8)}
           onRead={handleReadStory}
         />
 
@@ -65,12 +63,6 @@ export default function App() {
             />
           );
         })}
-
-        <StoryRow
-          title="Popular This Week"
-          stories={stories.slice(2, 8)}
-          onRead={handleReadStory}
-        />
       </div>
 
       {selectedStory && (
