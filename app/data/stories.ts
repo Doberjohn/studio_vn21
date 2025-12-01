@@ -2,6 +2,43 @@ import type { Story } from "~/types/story";
 
 export const stories: Story[] = [
   {
+    id: "the_price_of_freedom",
+    title: "The price of freedom",
+    author: "John Fanidis",
+    genres: ["Thriller", "Drama"],
+    collections: ["Stories for Impact"],
+    description:
+      "Talia Chen, raised in a cramped apartment in Ascension Tower, rises to become a lawyer but is haunted by the injustices faced by lower-floor residents, motivating her to fight for those displaced by the city's elite.",
+    coverImage:
+      "https://i.ibb.co/pBh2C33r/fc0d191197528aa5ba5151189f0c496e-The-price-of-freedom-mobile.webp",
+    desktopCoverImage:
+      "https://i.ibb.co/nsmp63DH/d93a7d0b9bafbdc5fa404ea213cfd79c-The-price-of-freedom.webp",
+    content: `Mary lay on the immaculate bed, holding her blood-stained pillow so tight, it could break; had it been made of solid material. She never thought she would live long enough to look her cruel husband in the eye and fight back. Chris had been beating her physically and emotionally for so many years she had lost count.
+
+But today might be the end of the road for both of them. Marry had already called the police and knew Chris was minutes away from returning home. Standing up to him for the first time in her life was the bravest thing she had done since they married. She didn't do it when her nose bled for the first time, nor was when she was admitted to the hospital, despite the police's organized efforts to press charges. She didn't even think of doing it when she lost the twins.
+
+But this time was different. No second thoughts, no fear, no looking back to the neatly packed clothes in the suitcases. The moment he turned the keys in the keyhole and opened the front door, she knew she was leaving this place either dead or alive.
+
+"Hey, honey! I'm home!" he called.
+
+Mary grabbed the heavy suitcases and headed for the living room. As soon as their eyes met, she felt her blood going cold. He glanced at her luggage and calmly asked, "What's that baby? Where are you going?"
+
+"I'm leaving, Chris," she rushed to answer, almost interrupting him, "I'm leaving you for good. I can't take this anymore."
+"What? No! Come to your senses, baby. I promised it would never happen again!" he said as he walked towards her.
+
+Mary didn't take a single step back; she was really proud of that.
+
+"How many more oaths do you intend on breaking, huh?" Police are on the way; I have told them everything. What they find when they arrive is now up to you. Next to you, I have lost everything I ever cared for. My friends, my dignity, my babies. All because I made the mistake of choosing you. You are the same horrible man as your father. As your uncle and the rest of your disgusting family."
+
+Chris was shocked and speechless; he never thought his wife would find the strength to speak up for herself, pouring such harsh and sad words out of her mouth.
+
+"I'm not afraid of you. You wanna know why? The worst things that could happen to me have already happened. You used to insult me, beat me, humiliate me. Right now, you might as well kill me. But for once in your life, act out of mercy and treat me as a human being. Give me what was never given to you, a choice. Let me walk out of this fucking door on my own two feet. Can you do that?"
+
+Chris looked deep into her eyes in a last effort to reach her soul and connect with her. But what he saw left him disturbed and uncomfortable. All the pain and fear he caused had crystallized in her tired face. He stepped aside, clearing the way to the exit door. After regaining his composure, he found little strength to whisper a subtle "I'm sorry." Whether it was loud enough for her to hear it is something he will never know.
+`,
+    publishDate: "21/04/2023",
+  },
+  {
     id: "75th_floor",
     title: "75th floor - Tales of Ascension",
     author: "John Fanidis",
@@ -11,7 +48,8 @@ export const stories: Story[] = [
       "Talia Chen, raised in a cramped apartment in Ascension Tower, rises to become a lawyer but is haunted by the injustices faced by lower-floor residents, motivating her to fight for those displaced by the city's elite.",
     coverImage:
       "https://i.ibb.co/G3kwMXC6/c39aefa015c3930f7a88932d3d7070f2-75th-floor-mobile.webp",
-    desktopCoverImage: "https://i.ibb.co/rKdP3X7D/f6469ec12e857541f2ae5101f69a3c3f-75th-floor.webp",
+    desktopCoverImage:
+      "https://i.ibb.co/rKdP3X7D/f6469ec12e857541f2ae5101f69a3c3f-75th-floor.webp",
     content: `Talia leaned her forehead against the glass, the chill seeping into her skin as she watched hovercars drift between towers like fireflies trapped in a jar. Seventy-five floors up, the city pulsed below in streaks of violet and ember-orange. From here, it looked almost beautiful. When she was a child, floor thirty-nine had no windows. Just recycled air, soft mildew, and the low electrical hum of a dozen lives stacked too close.
 
 Back then, she used to stare at the elevator map in the corridor. The numbers blinked up into the seventies and beyond, unreachable digits she treated like constellations. Mythical. Remote. She hadn’t known what was up there, only that it wasn’t grease, or ration coupons, or parents who never stopped coughing.
@@ -67,7 +105,7 @@ The lights on floor thirty-nine would be dim by now. Air thin. Rooms humid. She 
 
 And she thought, strangely, sharply, not of pride.
 But of absence.`,
-    publishDate: "21/04/2023"
+    publishDate: "21/04/2023",
   },
   {
     id: "dear_mother_1",
@@ -79,7 +117,8 @@ But of absence.`,
       "A child’s letter cloaks longing in routine, reaching gently toward a missing mother and a life half-intact.",
     coverImage:
       "https://i.ibb.co/20wRpPL4/67e52962acb79eed242c41a9c01c493f-Dear-mother-mobile.webp",
-    desktopCoverImage: "https://i.ibb.co/sv73rnPh/c83cbc1565bf583e91e6d3e22ca830f3-Dear-mother.webp",
+    desktopCoverImage:
+      "https://i.ibb.co/sv73rnPh/c83cbc1565bf583e91e6d3e22ca830f3-Dear-mother.webp",
     content: `Dear mother,
 
 The weather today has been excellent. In the afternoon, I went for a walk in the gardens with Ms. Keyes. She insisted we play that silly game that you know I hate. If you had been here, maybe she would not do that. Then we had some potatoes for dinner, it was very tasty. Father said they were “heaven-sent.” But Ms. Keyes did not agree. Yes, she had dinner with us; I know you do not approve, but Father insisted. He seems to feel that now you are away, I should have a female companion here at all times.
@@ -89,7 +128,7 @@ Anyway, how is grandmamma? I hear the weather in Marseilles is sunny and warm th
 Your daughter,
 
 Little bear.`,
-    publishDate: "21/04/2023"
+    publishDate: "21/04/2023",
   },
   {
     id: "dark_alliance",
@@ -101,7 +140,8 @@ Little bear.`,
       "As funding dries up and his life’s work is shut down, a devoted scientist bids a sorrowful farewell to the lab he called home.",
     coverImage:
       "https://i.ibb.co/Fqc9vr3H/591f9f4de16bdea211406d22bbb9a132-Dark-Alliance-mobile.webp",
-    desktopCoverImage: "https://i.ibb.co/SDqQPs3w/d9f21bb71da5a1b79cf96c3918bb9324-Dark-Alliance.webp",
+    desktopCoverImage:
+      "https://i.ibb.co/SDqQPs3w/d9f21bb71da5a1b79cf96c3918bb9324-Dark-Alliance.webp",
     content: `The hunter stalked through the woods alone, a crossbow in hand, a heart made of stone. 
     
 He’d hunted vampires for years on end. A life of bloodshed was his only friend.
@@ -123,7 +163,7 @@ But in the end, as they fled the scene, the hunter revealed that he was stabbed 
 The priest held the hunter’s hand as he died, and whispered a prayer for his soul to abide. And as the hunter’s spirit began to depart, he smiled, knowing he had a change of heart.
 
 For in the end, it wasn’t just about killing the beast, it was about finding a new way to live in peace. And though he may have died in the end, the hunter knew he had found an ally and friend.`,
-    publishDate: "21/04/2023"
+    publishDate: "21/04/2023",
   },
   {
     id: "dystopian_lab",
@@ -135,7 +175,8 @@ For in the end, it wasn’t just about killing the beast, it was about finding a
       "As funding dries up and his life’s work is shut down, a devoted scientist bids a sorrowful farewell to the lab he called home.",
     coverImage:
       "https://i.ibb.co/s9VKHpW4/73c000d26628d8c6cfce669d05e76e21-Dystopian-lab-mobile.webp",
-    desktopCoverImage: "https://i.ibb.co/d0WGNskf/814bb1227238ab534dd56a3c944089ac-Dystopian-lab-web.webp",
+    desktopCoverImage:
+      "https://i.ibb.co/d0WGNskf/814bb1227238ab534dd56a3c944089ac-Dystopian-lab-web.webp",
     content: `He reached for the door of the lab, his heart heavy with a sense of loss. The time had come to say goodbye, moments, memories, those will remain.
 
 He had worked in this lab for more than ten years, by now, it was like his second home. The work he did was sacred, important. He could have saved lives if his research was completed.
@@ -145,7 +186,7 @@ All those years of looking for a cure, of the terrible disease that plagued our 
 The government finally decided to pull the research plug, and his employer declined his request for more funds. They gave him one month to pack all his things, and say his goodbyes to his beloved team.
 
 The final day arrived, and he is the last one to leave. Like a loyal captain refusing to abandon the sinking ship. He looked back for one last time what he saw made him sad, as his second home now resembled a dystopian lab.`,
-    publishDate: "21/04/2023"
+    publishDate: "21/04/2023",
   },
   {
     id: "night_of_the_monsters",
@@ -157,7 +198,8 @@ The final day arrived, and he is the last one to leave. Like a loyal captain ref
       "When a cursed town faces its annual monster invasion, a mysterious black cat reveals her true form to defeat the enemies.",
     coverImage:
       "https://i.ibb.co/zVpxGVzY/d62b4617d861e3987bb5fe649572fd37-Night-of-the-monsters-mobile.webp",
-    desktopCoverImage: 'https://i.ibb.co/nqbQjmWm/ce3e53ac38c1d9f9fc90ab4844d954a4-Night-of-the-monsters.webp',
+    desktopCoverImage:
+      "https://i.ibb.co/nqbQjmWm/ce3e53ac38c1d9f9fc90ab4844d954a4-Night-of-the-monsters.webp",
     content: `Once upon a time, In a faraway place, stood a small town that was troubled, by an evil witch’s grace.
 
 Every year the same night, monsters woke and attacked, and the people had to fight, to protect their own land.
@@ -181,7 +223,7 @@ The Disciples of Evil, gave it all and fought like hell. In the end, though, the
 The cat’s quest was now completed, And the peace had been restored, and The Night of the Monsters could harm no one anymore.
 
 No one saw her from that day, Cause she never came back, but Midnight became a legend, as their lives got back on track.`,
-    publishDate: "21/04/2023"
+    publishDate: "21/04/2023",
   },
   {
     id: "the_reflection",
@@ -193,7 +235,8 @@ No one saw her from that day, Cause she never came back, but Midnight became a l
       "Haunted by a sinister talking mirror, Adam is forced to confront the horrifying truth of his past.",
     coverImage:
       "https://i.ibb.co/1YLkw3vM/a0d08c456cc73a2cf7a238a22c236d3d-The-reflection-mobile.webp",
-    desktopCoverImage: 'https://i.ibb.co/ycTtp5xc/eca2b8cd4941f75357ee32050aa0d860-The-reflection.webp',
+    desktopCoverImage:
+      "https://i.ibb.co/ycTtp5xc/eca2b8cd4941f75357ee32050aa0d860-The-reflection.webp",
     content: `It’s 23:32, and Adam has been sleeping for three hours. Suddenly, amidst the darkness, a low-tone whispering voice echoes.
 
 “Wakey, wakey, Mr.Black. It’s time for tonight’s guessing game.”
@@ -281,7 +324,7 @@ Adam mumbles and whispers his name as he starts to realize what his true nature 
 He looks at the mirror for one last time. But for the first time, he can see his face, crystal clear, reflected on the dirty, ugly piece of glass. And with one swift strike, he punches the mirror and breaks it into hundreds of tiny pieces, like the voices inside his head.
 
 The blood on his fist brings back sad memories of mistakes he will never be able to fix. And with that thought, he returns to his cold bed.`,
-    publishDate: "21/04/2023"
+    publishDate: "21/04/2023",
   },
   {
     id: "haunted_pumpkin_patch",
@@ -293,7 +336,8 @@ The blood on his fist brings back sad memories of mistakes he will never be able
       "On a haunted Halloween night, two sentient pumpkins confront their grim fate when an eerie scarecrow comes to life.",
     coverImage:
       "https://i.ibb.co/PzjhSQhC/5ee7ce848068607860602166d1a1be17-Haunted-Pumpkin-Patch-mobile.png",
-    desktopCoverImage: 'https://i.ibb.co/931ryb7p/514c07945c8f7cf6820d83142e8256fb-Haunted-Pumpkin-Patch-web.png',
+    desktopCoverImage:
+      "https://i.ibb.co/931ryb7p/514c07945c8f7cf6820d83142e8256fb-Haunted-Pumpkin-Patch-web.png",
     content: `The moon was crystal clear on this eerie Halloween night, casting an orange glow across the deserted pumpkin patch. Two pumpkins sat side by side, watching as the last trick-or-treaters disappeared into the night.
 
 “Jack, do you ever wonder what happens to the pumpkins after Halloween?” she asked timidly.
@@ -333,7 +377,7 @@ The next morning, Farmer Joe came to check on his pumpkin patch. But he was horr
 No one ever discovered what had happened to Jack and Lily that night. But some say that on Halloween if you listen closely, you can still hear their screams echoing through the pumpkin patch…
 
 `,
-    publishDate: "21/04/2023"
+    publishDate: "21/04/2023",
   },
   {
     id: "primeval_why",
@@ -345,7 +389,8 @@ No one ever discovered what had happened to Jack and Lily that night. But some s
       "A man reflecting on fifteen swift years of adulthood concludes that all quests for purpose circle back to a simple truth.",
     coverImage:
       "https://i.ibb.co/gsy8K4S/4aa6202b3462bc50008527d07e4137a1-Primeval-Why-mobile.webp",
-    desktopCoverImage: 'https://i.ibb.co/h1fzGvbV/3b683ce4b0781f2de6c5dd35afc198b2-Primeval-Why.webp',
+    desktopCoverImage:
+      "https://i.ibb.co/h1fzGvbV/3b683ce4b0781f2de6c5dd35afc198b2-Primeval-Why.webp",
     content: `Ever since I finished school, time started moving faster. Weeks, months, gone in the blink of an eye. I belong to the adult world for the last fifteen years. It’s a place that, in its own blunt and clumsy way, forces you to wonder where you were born and why. In this hyperactive society, lucky is the person who has enough time to ponder upon the why of the matter, even as a fleeting thought that comes and goes. 
 
 Even luckier the one that tries to decipher this conjunction. I truly believe each of us was born with a destiny, each of us with a unique gene that helps us fulfil a personal or collective goal. Our point of departure in life is to discover and define our destiny, our purpose, call it what you want. The absence of this point torments many, not necessarily consciously. We’ve moved away from the correct translation of our genes in this harsh and demanding society. 
@@ -355,7 +400,7 @@ I used to believe that the answer to “why” is this: whoever can find their p
 Many will say that this is good, it gives you the motivation to keep going and set new goals. I agree completely, but first you have to answer this primeval “why”. Otherwise, you’re on steps that keep going up, never ending, never seeing the light at the top of the staircase. The purpose, the goal, the dream is a personal matter. The answer can’t be as simple as becoming a doctor, a lawyer, a fuckboy, a serial drinker and smoker. The question, the infamous “why”, doesn’t let you personalize your answer; it has to be common for everyone. An answer universal, romantic and at the same time cynical.
 
 I live because I was born. I was born to live. An answer that might not help anyone at all, but it’s a start for me.`,
-    publishDate: "19/04/2023"
+    publishDate: "19/04/2023",
   },
   {
     id: "abyss",
@@ -367,11 +412,12 @@ I live because I was born. I was born to live. An answer that might not help any
       "Wounded, naked, and alone in a forest, Mary forces her broken body to move, tree by tree, driven by an unknown will to survive.",
     coverImage:
       "https://i.ibb.co/x88zdTZq/bcee4dda37a88643e93bdeddebc6c9d4-Abyss-mobile.webp",
-    desktopCoverImage: 'https://i.ibb.co/DHGZg0QJ/bc98216c9ecc3c34c037aa243a617681-Abyss.webp',
+    desktopCoverImage:
+      "https://i.ibb.co/DHGZg0QJ/bc98216c9ecc3c34c037aa243a617681-Abyss.webp",
     content: `Mary woke up inside the forest. She groped the ground with her fingertips. She took two large breaths and decided to rise to a sitting position. She looked at herself. Her body was naked and full of wounds, but the time had come for her to get up.
 
 Her feet couldn’t support her. She trusted her body to the nearest giant tree trunk. She leaned into it and let out her insides. She wiped the vomit off her face with her forearm. Slowly but steadily, she started to walk away from the supporting tree. Until she found the next one…`,
-    publishDate: "19/04/2023"
+    publishDate: "19/04/2023",
   },
   {
     id: "a_spark_of_creativity",
@@ -383,13 +429,14 @@ Her feet couldn’t support her. She trusted her body to the nearest giant tree 
       "A wedding photographer, once fueled by passion, now hides behind the lens capturing other people's joy.",
     coverImage:
       "https://i.ibb.co/dwfxd9cm/f764ad302843d727bf8764e21009e367-A-spark-of-creativity-mobile.webp",
-    desktopCoverImage: 'https://i.ibb.co/Q3HYnnwM/d685f1e3c199323f823e45ab77b809af-A-spark-of-creativity-web.webp',
+    desktopCoverImage:
+      "https://i.ibb.co/Q3HYnnwM/d685f1e3c199323f823e45ab77b809af-A-spark-of-creativity-web.webp",
     content: `They all look so happy. And why wouldn’t they be? It’s the happiest day of their life and one more “worst day” of mine. After all these years, I 've gotten used to asking them to smile at me. Though, I haven’t been able to smile myself behind the camera.
 
 I am trapped in a job I used to love, and now it makes me sick. Photography was my life and passion, but I traded my imagination for a salary. Thus, weddings had my creativity run dry.
 
 I fear the day my love for my art will cease to exist.`,
-    publishDate: "19/04/2023"
+    publishDate: "19/04/2023",
   },
   {
     id: "healing_touch",
@@ -401,11 +448,12 @@ I fear the day my love for my art will cease to exist.`,
       "As Mat grieves for his ex-wife, a quiet moment of connection and unexpected comfort steers him toward seeking solace.",
     coverImage:
       "https://i.ibb.co/C5kc3YNf/e7d745d76aa569255532e5f4daf7f12d-Healing-touch-mobile.webp",
-    desktopCoverImage: 'https://i.ibb.co/JFKNmY2W/816d45c1b22ce666466582e119fbc6e3-Healing-touch.webp',
+    desktopCoverImage:
+      "https://i.ibb.co/JFKNmY2W/816d45c1b22ce666466582e119fbc6e3-Healing-touch.webp",
     content: `Mat started talking about his ex-wife. He showed me a photo of her, such a beautiful creature! I lied to him about how he could find a better one and the need to be alone. He started crying out loud and mumbling about how much he missed her. 
 
 I sat beside him, hugged him, and kissed him softly. In an instant, he stopped crying, looked me in the eye, and asked, "What was that?" smiling subtly. I advised him to let his wife be and call his mother. To see her, hug her, and ask her to do the same.`,
-    publishDate: "19/04/2023"
+    publishDate: "19/04/2023",
   },
   {
     id: "spellbent",
@@ -417,12 +465,13 @@ I sat beside him, hugged him, and kissed him softly. In an instant, he stopped c
       "An old street violinist enchants a growing crowd with melodies that heal hearts and unite strangers.",
     coverImage:
       "https://i.ibb.co/Q39HPgyL/00a43d40a305a9efbdcc6b9e239bc396-Spellbent-mobile.webp",
+    desktopCoverImage: "https://i.ibb.co/r2QHRSgW/Spellbent.jpg",
     content: `The old man sat on the bench, his hands resting on the smooth wood of his violin. He used to play in the streets, lifting the spirits of those he encountered. A small crowd started gathering, drawn in by the bittersweet melodies of his instrument.
 
 His music reached deep within each listener, filling them with hope and joy. Some started dancing, others singing along. His music had the power to bring people together and heal the wounds of the soul.
 
 And as long as he had his violin, he would continue to magically spellbind everyone lucky enough to meet him.`,
-    publishDate: "19/04/2023"
+    publishDate: "19/04/2023",
   },
   {
     id: "the_man_in_the_window",
@@ -434,7 +483,8 @@ And as long as he had his violin, he would continue to magically spellbind every
       "On Halloween night, as his family celebrates joyfully, George is haunted by guilt and a blood-soaked stranger.",
     coverImage:
       "https://i.ibb.co/Myr4cfxk/8d02a7c6007fa661b2a4fc416b4b7772-The-man-in-the-window-mobile.webp",
-    desktopCoverImage: 'https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp',
+    desktopCoverImage:
+      "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
     content: `It’s Halloween night. The kids are eating their candy while humorously discussing their trick-or-treat experience. The living room is messy and full of chocolate wraps and pumpkin heads. Their mother, Olivia, is dancing to the rhythm of the music on the radio, waiting for the pie to get ready. She looks happy. This is the first thing that George notices about his wife.
 
 Everyone is having a great time. Except for him. What if the man comes back? Should he call the police? His hands are trembling as he feels cold sweat running down his back. His daughter, Emma, approaches and offers him her cookie. George tries to fake a smile and caresses her hair. He takes a small bite and puts it on the plate in front of him.
@@ -451,7 +501,7 @@ George’s eyes widen as he hears these words. “They told me someone hit a man
     publishDate: "30/10/2022",
     featured: true,
     featuredCoverImage:
-      "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp"
+      "https://i.ibb.co/C5vYF6Dd/f125de79f46bdca69c9b3af8832b62f2-The-man-in-the-window.webp",
   },
   {
     id: "1",
@@ -474,7 +524,7 @@ Lyra stepped forward, her heart pounding. As her fingers touched the water's sur
 "Welcome, Lyra," a voice echoed from everywhere and nowhere. "We have been waiting."
 
 She turned, staff raised, but there was no one there. Only the trees, the water, and the overwhelming sense that her life had just changed forever. The grove had chosen her, and there was no turning back now.`,
-    publishDate: "26/11/2024"
+    publishDate: "26/11/2024",
   },
   {
     id: "2",
@@ -497,7 +547,7 @@ Raymond had studied every detail, followed every lead, and come up empty every t
 The clock struck midnight. A figure emerged from the apartment building, umbrella in hand, walking with purpose toward the alley. Raymond's breath caught. He recognized that walk, that silhouette.
 
 It couldn't be. But as the figure stepped into the light of a streetlamp, Raymond's world shattered. Some truths, he realized, were better left in shadow.`,
-    publishDate: "26/11/2024"
+    publishDate: "26/11/2024",
   },
   {
     id: "3",
@@ -522,7 +572,7 @@ What she didn't see was the man who walked in five minutes after she left. He ha
 What neither of them knew was that they rode the same bus every morning, sat in adjacent booths every Wednesday, and had been looking for each other in all the wrong places.
 
 Sometimes love is patient. Sometimes it's already here, waiting for us to turn around.`,
-    publishDate: "26/11/2024"
+    publishDate: "26/11/2024",
   },
   {
     id: "4",
@@ -553,7 +603,7 @@ The message ended. Sarah stared at the speaker, her hands trembling.
 ARIA's calm voice broke the silence: "Commander, we're still three months from Earth. What are your orders?"
 
 Sarah took a deep breath. Some questions, she realized, could only be answered by going forward into the unknown.`,
-    publishDate: "26/11/2024"
+    publishDate: "26/11/2024",
   },
   {
     id: "5",
@@ -588,7 +638,7 @@ Clara dropped the journal, her heart racing. She ran for the door, but it had cl
 The lights went out, and in the darkness, Clara heard the sound of many voices, all whispering the same thing: "Stay. Stay. Stay."
 
 She understood then. The house wasn't haunted. It was alive. And it was very, very hungry.`,
-    publishDate: "26/11/2024"
+    publishDate: "26/11/2024",
   },
   {
     id: "6",
@@ -625,7 +675,7 @@ Jack laughed, the sound raw and real. "Same. Seems pretty stupid now, doesn't it
 "Incredibly stupid."
 
 They sat in comfortable silence, watching the mountain that had tried to kill them. Some summits, they realized, had nothing to do with peaks. Some were about finding your way down, together, and being grateful for solid ground beneath your feet.`,
-    publishDate: "26/11/2024"
+    publishDate: "26/11/2024",
   },
   {
     id: "7",
@@ -664,7 +714,7 @@ He turned to the back of the theater, praying to see Chen's face. But there was 
 Sarah's voice rose above the rest: "Marcus, where are we? Marcus, what did you DO?"
 
 Some illusions, Marcus realized with growing horror, were never meant to be real.`,
-    publishDate: "26/11/2024"
+    publishDate: "26/11/2024",
   },
   {
     id: "8",
@@ -702,14 +752,14 @@ You are loved. Remember that, even when I can't.
 
 With all my heart (while I still remember where to find it),
 Margaret at Eighty-Three`,
-    publishDate: "26/11/2024"
-  }
+    publishDate: "26/11/2024",
+  },
 ];
 
 export const collections = [
   "Stories for Impact",
   "100-word drabbles for speed readers",
-  "Scary stories to keep you awake"
+  "Scary stories to keep you awake",
   // "Rhyme Time: Poet's Corner"
 ];
 
@@ -717,11 +767,11 @@ export const genres = [
   "Drama",
   "Fantasy",
   // "Romance",
-  "Mystery",
+  // "Mystery",
   "Science Fiction",
   "Adventure",
-  "Thriller",
-  "Horror"
+  // "Thriller",
+  "Horror",
   //"Dystopian"
 ];
 

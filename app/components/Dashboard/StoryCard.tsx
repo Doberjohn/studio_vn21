@@ -35,8 +35,7 @@ export function StoryCard({ story, onRead }: StoryCardProps) {
       </div>
 
       {isHovered && (
-        <div
-          className="absolute inset-0 bg-black/90 rounded flex flex-col justify-end p-4 transition-opacity duration-300">
+        <div className="absolute inset-0 bg-black/90 rounded flex flex-col justify-end p-4 transition-opacity duration-300">
           <h3 className="text-white mb-1">{story.title}</h3>
           <p className="text-gray-400 text-sm mb-2">by {story.author}</p>
           <p className="text-gray-300 text-sm line-clamp-2 mb-3">
