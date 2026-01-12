@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router";
-import { Button } from "~/components/UI/Button";
+import { Button } from "~/shared/components/Button";
 
 export function CTA() {
   return (

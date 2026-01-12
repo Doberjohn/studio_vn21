@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Button } from "~/components/UI/Button";
+import { Button } from "~/shared/components/Button";
 import { BookOpen } from "lucide-react";
 import React from "react";
 

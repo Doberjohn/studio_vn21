@@ -7,8 +7,8 @@ export interface Story {
   description: string;
   coverImage: string;
   desktopCoverImage?: string;
+  featuredCoverImage?: string;
   content: string;
   publishDate: string;
   featured?: boolean;
-  featuredCoverImage?: string;
 }

@@ -1,7 +1,7 @@
 import { X, Clock, User } from "lucide-react";
 import { useEffect } from "react";
-import type { Story } from "~/types/story";
-import { Button } from "~/components/UI/Button";
+import type { Story } from "~/shared/types/story";
+import { Button } from "~/shared/components/Button";
 import { readingTime } from "reading-time-estimator";
 
 interface StoryReaderProps {

@@ -1,4 +1,4 @@
-import type { Story } from "~/types/story";
+import type { Story } from "~/shared/types/story";
 
 export const stories: Story[] = [
   {

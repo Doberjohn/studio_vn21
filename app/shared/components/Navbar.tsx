@@ -1,7 +1,7 @@
 import { Search, Bell } from "lucide-react";
 import React from "react";
-import { Button } from "~/components/UI/Button";
-import { Brand } from "~/components/UI/Brand";
+import { Button } from "./Button";
+import { Brand } from "./Brand";
 
 export function Navbar() {
   return (

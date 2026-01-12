@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Navbar } from "~/components/UI/Navbar";
-import { Featured, StoryRow, StoryReader } from "~/components/Dashboard";
+import { Navbar } from "~/shared/components/Navbar";
+import { Featured, StoryRow, StoryReader } from "~/features/stories";
 import {
   stories,
   getFeaturedStory,
@@ -8,8 +8,8 @@ import {
   getStoriesByCollection,
   genres,
   collections,
-} from "~/data/stories";
-import type { Story } from "~/types/story";
+} from "~/features/stories/data/stories";
+import type { Story } from "~/shared/types/story";
 
 interface StorySectionProps {
   title: string;

@@ -1,8 +1,8 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
 import { StoryCard } from "./StoryCard";
-import type { Story } from "~/types/story";
-import { useHorizontalScroll } from "~/hooks/useHorizontalScroll";
+import type { Story } from "~/shared/types/story";
+import { useHorizontalScroll } from "~/shared/hooks/useHorizontalScroll";
 
 interface StoryRowProps {
   title: string;

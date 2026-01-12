@@ -1,5 +1,5 @@
-import type { Story } from "~/types/story";
-import { Button } from "~/components/UI/Button";
+import type { Story } from "~/shared/types/story";
+import { Button } from "~/shared/components/Button";
 
 interface FeaturedProps {
   story: Story;

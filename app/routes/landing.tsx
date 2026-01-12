@@ -1,5 +1,5 @@
 import type { Route } from "./+types/landing";
-import { Button } from "~/components/UI/Button";
+import { Button } from "~/shared/components/Button";
 import React from "react";
 import { Link } from "react-router";
 import {
@@ -8,9 +8,9 @@ import {
   Hero,
   GenreShowcase,
   ReadingExperience,
-} from "~/components/LandingPage";
-import { Brand } from "~/components/UI/Brand";
-import { Footer } from "~/components/Layout/Footer";
+} from "~/features/landing";
+import { Brand } from "~/shared/components/Brand";
+import { Footer } from "~/shared/components/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
