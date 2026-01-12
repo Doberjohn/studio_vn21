@@ -6,7 +6,7 @@ interface FeaturedProps {
   onRead: (story: Story) => void;
 }
 
-export function Featured({ story, onRead }: FeaturedProps) {
+export function StoryFeatured({ story, onRead }: FeaturedProps) {
   return (
     <section
       className="relative h-[80vh] w-full"

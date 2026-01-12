@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 import { Button } from "~/shared/components/Button";
 
-export function CTA() {
+export function LandingCTA() {
   return (
     <section
       className="py-20 px-8 bg-black border-t-8 border-gray-800"

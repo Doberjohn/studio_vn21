@@ -3,7 +3,7 @@ import { Button } from "~/shared/components/Button";
 import { BookOpen } from "lucide-react";
 import React from "react";
 
-export function Hero() {
+export function LandingHero() {
   return (
     <header className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0">

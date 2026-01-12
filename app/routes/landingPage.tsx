@@ -3,11 +3,11 @@ import { Button } from "~/shared/components/Button";
 import React from "react";
 import { Link } from "react-router";
 import {
-  Advantages,
-  CTA,
-  Hero,
-  GenreShowcase,
-  ReadingExperience,
+  LandingAdvantages,
+  LandingCTA,
+  LandingHero,
+  LandingGenreShowcase,
+  LandingReadingExperience,
 } from "~/features/landing";
 import { Brand } from "~/shared/components/Brand";
 import { Footer } from "~/shared/components/Footer";
@@ -19,7 +19,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function Landing() {
+export default function LandingPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Brand>
@@ -27,11 +27,11 @@ export default function Landing() {
           <Button>Browse Stories</Button>
         </Link>
       </Brand>
-      <Hero />
-      <Advantages />
-      <GenreShowcase />
-      <ReadingExperience />
-      <CTA />
+      <LandingHero />
+      <LandingAdvantages />
+      <LandingGenreShowcase />
+      <LandingReadingExperience />
+      <LandingCTA />
       <Footer />
     </div>
   );

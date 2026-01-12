@@ -1,7 +1,7 @@
 import { Clock, LibraryBig, UserStar } from "lucide-react";
 import React from "react";
 
-export function Advantages() {
+export function LandingAdvantages() {
   return (
     <section
       className="py-20 px-8 bg-black border-t-8 border-gray-800"

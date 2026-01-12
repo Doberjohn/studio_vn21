@@ -1,7 +1,5 @@
-import { Advantages } from "./Advantages";
-import { CTA } from "./CTA";
-import { GenreShowcase } from "./GenreShowcase";
-import { Hero } from "./Hero";
-import { ReadingExperience } from "./ReadingExperience";
-
-export { Advantages, CTA, Hero, GenreShowcase, ReadingExperience };
+export * from "./LandingAdvantages";
+export * from "./LandingCTA";
+export * from "./LandingGenreShowcase";
+export * from "./LandingHero";
+export * from "./LandingReadingExperience";

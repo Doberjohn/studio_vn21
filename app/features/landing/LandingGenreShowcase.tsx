@@ -12,7 +12,7 @@ import {
   Zap,
 } from "lucide-react";
 
-export function GenreShowcase() {
+export function LandingGenreShowcase() {
   return (
     <section
       className="py-20 px-8 bg-black border-t-8 border-gray-800"

@@ -1,6 +1,6 @@
 import React from "react";
 
-export function ReadingExperience() {
+export function LandingReadingExperience() {
   return (
     <section
       className="py-20 px-8 bg-black border-t-8 border-gray-800"

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Navbar } from "~/shared/components/Navbar";
-import { Featured, StoryRow, StoryReader } from "~/features/stories";
+import { StoryFeatured, StoryRow, StoryReader } from "~/features/stories";
 import {
   stories,
   getFeaturedStory,
@@ -22,7 +22,7 @@ function StorySection({ title, stories, onRead }: StorySectionProps) {
   return <StoryRow title={title} stories={stories} onRead={onRead} />;
 }
 
-export default function App() {
+export default function DashboardPage() {
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
   const featuredStory = getFeaturedStory() || stories[0];
 
@@ -38,7 +38,7 @@ export default function App() {
     <div className="min-h-screen bg-black">
       <Navbar />
 
-      <Featured story={featuredStory} onRead={handleReadStory} />
+      <StoryFeatured story={featuredStory} onRead={handleReadStory} />
 
       <div className="relative z-10 -mt-32">
         <StorySection
