@@ -40,7 +40,7 @@ export default function DashboardPage() {
 
       <StoryFeatured story={featuredStory} onRead={handleReadStory} />
 
-      <div className="relative z-10 -mt-32">
+      <div className="relative z-10">
         <StorySection
           title="Trending Now"
           stories={stories.slice(0, 8)}
