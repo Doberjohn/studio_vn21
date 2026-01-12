@@ -14,7 +14,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles = "transition-colors cursor-pointer rounded";
-  
+
   const variants = {
     primary: "bg-red-600 text-white hover:bg-red-700",
     nav: "text-white hover:text-gray-300",

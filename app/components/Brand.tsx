@@ -10,7 +10,7 @@ export function Brand({
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 px-8 py-4 bg-gradient-to-b from-black to-transparent",
-        className
+        className,
       )}
       {...props}
     >
