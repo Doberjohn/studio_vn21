@@ -1,7 +1,8 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useRef } from "react";
+import React from "react";
 import { StoryCard } from "./StoryCard";
 import type { Story } from "~/types/story";
+import { useHorizontalScroll } from "~/hooks/useHorizontalScroll";
 
 interface StoryRowProps {
   title: string;
@@ -10,32 +11,8 @@ interface StoryRowProps {
 }
 
 export function StoryRow({ title, stories, onRead }: StoryRowProps) {
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: "left" | "right") => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = scrollContainerRef.current.clientWidth * 0.8;
-      const newScrollLeft =
-        scrollContainerRef.current.scrollLeft +
-        (direction === "right" ? scrollAmount : -scrollAmount);
-
-      scrollContainerRef.current.scrollTo({
-        left: newScrollLeft,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const handleScroll = () => {
-    if (scrollContainerRef.current) {
-      const { scrollLeft, scrollWidth, clientWidth } =
-        scrollContainerRef.current;
-      setShowLeftArrow(scrollLeft > 0);
-      setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
-    }
-  };
+  const { scrollContainerRef, showLeftArrow, showRightArrow, scroll } =
+    useHorizontalScroll();
 
   return (
     <div className="px-8 md:px-16 mb-8 group/row">
@@ -52,7 +29,6 @@ export function StoryRow({ title, stories, onRead }: StoryRowProps) {
 
         <div
           ref={scrollContainerRef}
-          onScroll={handleScroll}
           className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >

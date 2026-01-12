@@ -11,6 +11,17 @@ import {
 } from "~/data/stories";
 import type { Story } from "~/types/story";
 
+interface StorySectionProps {
+  title: string;
+  stories: Story[];
+  onRead: (story: Story) => void;
+}
+
+function StorySection({ title, stories, onRead }: StorySectionProps) {
+  if (stories.length === 0) return null;
+  return <StoryRow title={title} stories={stories} onRead={onRead} />;
+}
+
 export default function App() {
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
   const featuredStory = getFeaturedStory() || stories[0];
@@ -30,39 +41,29 @@ export default function App() {
       <Featured story={featuredStory} onRead={handleReadStory} />
 
       <div className="relative z-10 -mt-32">
-        <StoryRow
+        <StorySection
           title="Trending Now"
           stories={stories.slice(0, 8)}
           onRead={handleReadStory}
         />
 
-        {collections.map((collection) => {
-          const collectionStories = getStoriesByCollection(collection);
-          if (collectionStories.length === 0) return null;
+        {collections.map((collection) => (
+          <StorySection
+            key={collection}
+            title={collection}
+            stories={getStoriesByCollection(collection)}
+            onRead={handleReadStory}
+          />
+        ))}
 
-          return (
-            <StoryRow
-              key={collection}
-              title={collection}
-              stories={collectionStories}
-              onRead={handleReadStory}
-            />
-          );
-        })}
-
-        {genres.map((genre) => {
-          const genreStories = getStoriesByGenre(genre);
-          if (genreStories.length === 0) return null;
-
-          return (
-            <StoryRow
-              key={genre}
-              title={genre}
-              stories={genreStories}
-              onRead={handleReadStory}
-            />
-          );
-        })}
+        {genres.map((genre) => (
+          <StorySection
+            key={genre}
+            title={genre}
+            stories={getStoriesByGenre(genre)}
+            onRead={handleReadStory}
+          />
+        ))}
       </div>
 
       {selectedStory && (
