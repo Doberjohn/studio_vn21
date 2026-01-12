@@ -15,13 +15,14 @@ export function StoryRow({ title, stories, onRead }: StoryRowProps) {
     useHorizontalScroll();
 
   return (
-    <div className="px-8 md:px-16 mb-8 group/row">
-      <h2 className="text-white text-xl mb-4">{title}</h2>
+    <section className="px-8 md:px-16 mb-12 group/row" aria-labelledby={`row-title-${title.replace(/\s+/g, '-').toLowerCase()}`}>
+      <h2 id={`row-title-${title.replace(/\s+/g, '-').toLowerCase()}`} className="text-white text-2xl font-semibold mb-6">{title}</h2>
       <div className="relative">
         {showLeftArrow && (
           <button
             onClick={() => scroll("left")}
-            className="absolute left-0 top-0 bottom-0 z-20 w-12 bg-black/50 flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity hover:bg-black/70"
+            className="absolute left-0 top-0 bottom-0 z-20 w-12 bg-black/50 flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity hover:bg-black/70 cursor-pointer"
+            aria-label={`Scroll ${title} left`}
           >
             <ChevronLeft className="w-8 h-8 text-white" />
           </button>
@@ -29,11 +30,11 @@ export function StoryRow({ title, stories, onRead }: StoryRowProps) {
 
         <div
           ref={scrollContainerRef}
-          className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+          className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {stories.map((story) => (
-            <div key={story.id} className="flex-shrink-0 w-48 md:w-100">
+            <div key={story.id} className="shrink-0 w-48 md:w-80">
               <StoryCard story={story} onRead={onRead} />
             </div>
           ))}
@@ -42,12 +43,13 @@ export function StoryRow({ title, stories, onRead }: StoryRowProps) {
         {showRightArrow && (
           <button
             onClick={() => scroll("right")}
-            className="absolute right-0 top-0 bottom-0 z-20 w-12 bg-black/50 flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity hover:bg-black/70"
+            className="absolute right-0 top-0 bottom-0 z-20 w-12 bg-black/50 flex items-center justify-center opacity-0 group-hover/row:opacity-100 transition-opacity hover:bg-black/70 cursor-pointer"
+            aria-label={`Scroll ${title} right`}
           >
             <ChevronRight className="w-8 h-8 text-white" />
           </button>
         )}
       </div>
-    </div>
+    </section>
   );
 }

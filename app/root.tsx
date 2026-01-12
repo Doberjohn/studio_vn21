@@ -1,3 +1,4 @@
+import React from "react";
 import {
   isRouteErrorResponse,
   Links,
@@ -8,7 +9,6 @@ import {
 } from "react-router";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
-
 import type { Route } from "./+types/root";
 import "./app.css";
 
@@ -27,7 +27,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <title>Studio VN21</title>
         <meta charSet="utf-8" />
@@ -37,7 +37,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <SpeedInsights />
         <Analytics />
       </head>
-      <body>
+      <body className="bg-black text-white antialiased selection:bg-red-600 selection:text-white">
         {children}
         <ScrollRestoration />
         <Scripts />

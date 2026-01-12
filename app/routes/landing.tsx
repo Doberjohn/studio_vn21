@@ -1,16 +1,16 @@
 import type { Route } from "./+types/landing";
-import { Button } from "~/components/Button";
+import { Button } from "~/components/UI/Button";
 import React from "react";
 import { Link } from "react-router";
 import {
   Advantages,
   CTA,
-  Footer,
   Hero,
   GenreShowcase,
   ReadingExperience,
 } from "~/components/LandingPage";
-import { Brand } from "~/components/Brand";
+import { Brand } from "~/components/UI/Brand";
+import { Footer } from "~/components/Layout/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [

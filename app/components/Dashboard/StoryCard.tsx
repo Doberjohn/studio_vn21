@@ -14,7 +14,7 @@ export function StoryCard({ story, onRead }: StoryCardProps) {
       className="group relative ml-5 cursor-pointer transition-transform duration-300 hover:scale-110 hover:z-10"
       onClick={() => onRead(story)}
     >
-      <div className="aspect-[2/3] md:aspect-video rounded overflow-hidden bg-gray-800">
+      <div className="aspect-2/3 md:aspect-video rounded overflow-hidden bg-gray-800">
         <picture>
           {story.desktopCoverImage && (
             <source
