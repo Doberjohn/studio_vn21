@@ -8,7 +8,10 @@ interface FeaturedProps {
 
 export function Featured({ story, onRead }: FeaturedProps) {
   return (
-    <section className="relative h-[80vh] w-full" aria-labelledby="featured-story-title">
+    <section
+      className="relative h-[80vh] w-full"
+      aria-labelledby="featured-story-title"
+    >
       <div className="absolute inset-0">
         <img
           src={story.featuredCoverImage}
@@ -21,12 +24,23 @@ export function Featured({ story, onRead }: FeaturedProps) {
 
       <div className="relative h-full flex items-center px-8 md:px-16">
         <div className="max-w-2xl">
-          <div className="text-green-400 font-medium mb-2">{story.genres.join(" | ")}</div>
-          <h1 id="featured-story-title" className="text-white text-4xl md:text-5xl font-bold mb-4">{story.title}</h1>
+          <div className="text-green-400 font-medium mb-2">
+            {story.genres.join(" | ")}
+          </div>
+          <h1
+            id="featured-story-title"
+            className="text-white text-4xl md:text-5xl font-bold mb-4"
+          >
+            {story.title}
+          </h1>
           <p className="text-gray-300 text-lg mb-2">by {story.author}</p>
-          <p className="text-white mb-6 line-clamp-3 text-lg leading-relaxed">{story.description}</p>
+          <p className="text-white mb-6 line-clamp-3 text-lg leading-relaxed">
+            {story.description}
+          </p>
           <div className="flex gap-4">
-            <Button onClick={() => onRead(story)} size="lg">Read Now</Button>
+            <Button onClick={() => onRead(story)} size="lg">
+              Read Now
+            </Button>
           </div>
         </div>
       </div>

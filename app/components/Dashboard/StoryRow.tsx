@@ -15,8 +15,16 @@ export function StoryRow({ title, stories, onRead }: StoryRowProps) {
     useHorizontalScroll();
 
   return (
-    <section className="px-8 md:px-16 mb-12 group/row" aria-labelledby={`row-title-${title.replace(/\s+/g, '-').toLowerCase()}`}>
-      <h2 id={`row-title-${title.replace(/\s+/g, '-').toLowerCase()}`} className="text-white text-2xl font-semibold mb-6">{title}</h2>
+    <section
+      className="px-8 md:px-16 mb-12 group/row"
+      aria-labelledby={`row-title-${title.replace(/\s+/g, "-").toLowerCase()}`}
+    >
+      <h2
+        id={`row-title-${title.replace(/\s+/g, "-").toLowerCase()}`}
+        className="text-white text-2xl font-semibold mb-6"
+      >
+        {title}
+      </h2>
       <div className="relative">
         {showLeftArrow && (
           <button
