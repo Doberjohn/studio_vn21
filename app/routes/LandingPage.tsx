@@ -19,7 +19,7 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function LandingPage2() {
+export default function LandingPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <Brand>
