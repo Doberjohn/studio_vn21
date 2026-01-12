@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { ButtonWithIcon } from "~/components/ButtonWithIcon";
+import { Button } from "~/components/Button";
 import { BookOpen } from "lucide-react";
 import React from "react";
 
@@ -26,10 +26,10 @@ export function Hero() {
             Free to read. No sign-up required.
           </p>
           <Link to="/dashboard">
-            <ButtonWithIcon>
+            <Button size="xl">
               <BookOpen className="w-6 h-6" />
               Start Reading
-            </ButtonWithIcon>
+            </Button>
           </Link>
         </div>
       </div>
