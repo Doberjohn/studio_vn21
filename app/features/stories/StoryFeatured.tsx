@@ -18,8 +18,8 @@ export function StoryFeatured({ story, onRead }: FeaturedProps) {
           alt={`Cover for featured story: ${story.title}`}
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-black via-black/50 to-transparent" />
-        <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
       </div>
 
       <div className="relative h-full flex items-center px-8 md:px-16">

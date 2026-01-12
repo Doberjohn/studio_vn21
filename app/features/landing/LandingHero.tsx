@@ -14,7 +14,7 @@ export function LandingHero() {
           fetchPriority="high"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
       </div>
 
       <div className="relative h-full flex items-center justify-center px-8">

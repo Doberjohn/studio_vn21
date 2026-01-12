@@ -76,7 +76,7 @@ export function LandingGenreShowcase() {
           ].map((genre) => (
             <div
               key={genre.name}
-              className={`bg-linear-to-br ${genre.color} p-8 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition-transform cursor-default shadow-lg shadow-black/20`}
+              className={`bg-gradient-to-br ${genre.color} p-8 rounded-lg flex flex-col items-center justify-center hover:scale-105 transition-transform cursor-default shadow-lg shadow-black/20`}
             >
               <genre.icon
                 className="w-8 h-8 text-white mb-3"

@@ -12,27 +12,45 @@ interface StoryReaderProps {
 export function StoryReader({ story, onClose }: StoryReaderProps) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
+
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+
     return () => {
       document.body.style.overflow = "unset";
+      document.removeEventListener("keydown", handleEscape);
     };
-  }, []);
+  }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/95 overflow-y-auto">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="story-reader-title"
+      className="fixed inset-0 z-50 bg-black/95 overflow-y-auto"
+    >
       <div className="min-h-screen py-8 px-4">
         <div className="max-w-3xl mx-auto">
           <button
             onClick={onClose}
+            aria-label="Close story reader"
             className="fixed top-4 right-4 w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
           >
-            <X className="w-6 h-6 text-white" />
+            <X className="w-6 h-6 text-white" aria-hidden="true" />
           </button>
 
           <div className="mb-8">
             <div className="text-green-400 mb-2">
               {story.genres.join(" | ")}
             </div>
-            <h1 className="text-white mb-3">{story.title}</h1>
+            <h1 id="story-reader-title" className="text-white mb-3">
+              {story.title}
+            </h1>
             <div className="flex items-center gap-4 text-gray-400 text-sm mb-4">
               <div className="flex items-center gap-1">
                 <User className="w-4 h-4" />
@@ -49,7 +67,7 @@ export function StoryReader({ story, onClose }: StoryReaderProps) {
           <div className="prose prose-invert max-w-none">
             {story.content.split("\n\n").map((paragraph, index) => (
               <p
-                key={index}
+                key={`${story.id}-para-${index}`}
                 className="text-gray-200 text-lg mb-4 leading-relaxed"
               >
                 {paragraph}
