@@ -42,6 +42,26 @@ export async function getStoryById(id: string): Promise<Story | null> {
   return story ? transformStory(story) : null;
 }
 
+export async function getStoryByIdForAdmin(id: string): Promise<Story | null> {
+  const story = await prisma.story.findUnique({
+    where: { id },
+    include: {
+      genres: {
+        include: {
+          genre: true
+        }
+      },
+      collections: {
+        include: {
+          collection: true
+        }
+      }
+    }
+  });
+
+  return story ? transformStory(story, false) : null;
+}
+
 export async function getFeaturedStory(): Promise<Story | null> {
   const story = await prisma.story.findFirst({
     where: { featured: true, isVisible: true },
