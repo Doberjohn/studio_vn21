@@ -7,3 +7,5 @@
 /build/
 
 .vercel
+
+/generated/prisma

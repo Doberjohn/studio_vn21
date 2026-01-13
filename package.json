@@ -5,18 +5,30 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
+    "dev:clean": "Remove-Item -Recurse -Force node_modules/.vite -ErrorAction SilentlyContinue; react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "prettify": "npx prettier . --write"
+    "prettify": "npx prettier . --write",
+    "db:seed": "tsx prisma/seed.ts",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@prisma/adapter-pg": "^7.2.0",
+    "@prisma/client": "^7.2.0",
     "@react-router/node": "^7.9.2",
     "@react-router/serve": "^7.9.2",
     "@vercel/analytics": "^1.6.0",
     "@vercel/speed-insights": "^1.2.0",
     "clsx": "^2.1.1",
+    "dotenv": "^17.2.3",
     "isbot": "^5.1.31",
     "lucide-react": "^0.554.0",
+    "pg": "^8.16.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "^7.12.0",
@@ -28,10 +40,13 @@
     "@react-router/dev": "^7.9.6",
     "@tailwindcss/vite": "^4.1.13",
     "@types/node": "^22",
+    "@types/pg": "^8.16.0",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "prettier": "3.6.2",
+    "prisma": "^7.2.0",
     "tailwindcss": "^4.1.13",
+    "tsx": "^4.21.0",
     "typescript": "^5.9.2",
     "vite": "^7.1.7",
     "vite-tsconfig-paths": "^5.1.4"

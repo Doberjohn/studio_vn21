@@ -1,15 +1,30 @@
+import type { Route } from "./+types/DashboardPage";
 import { useState } from "react";
 import { Navbar } from "~/shared/components/Navbar";
 import { StoryFeatured, StoryRow, StoryReader } from "~/features/stories";
 import {
-  stories,
+  getAllStories,
   getFeaturedStory,
-  getStoriesByGenre,
-  getStoriesByCollection,
-  genres,
-  collections,
-} from "~/features/stories/data/stories";
+  getAllGenres,
+  getAllCollections,
+} from "~/features/stories/data/storyService";
 import type { Story } from "~/shared/types/story";
+
+export async function loader({}: Route.LoaderArgs) {
+  const [stories, featuredStory, genres, collections] = await Promise.all([
+    getAllStories(),
+    getFeaturedStory(),
+    getAllGenres(),
+    getAllCollections(),
+  ]);
+
+  return {
+    stories,
+    featuredStory: featuredStory || stories[0],
+    genres,
+    collections,
+  };
+}
 
 interface StorySectionProps {
   title: string;
@@ -22,9 +37,9 @@ function StorySection({ title, stories, onRead }: StorySectionProps) {
   return <StoryRow title={title} stories={stories} onRead={onRead} />;
 }
 
-export default function DashboardPage() {
+export default function DashboardPage({ loaderData }: Route.ComponentProps) {
+  const { stories, featuredStory, genres, collections } = loaderData;
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
-  const featuredStory = getFeaturedStory() || stories[0];
 
   const handleReadStory = (story: Story) => {
     setSelectedStory(story);
@@ -47,23 +62,31 @@ export default function DashboardPage() {
           onRead={handleReadStory}
         />
 
-        {collections.map((collection) => (
-          <StorySection
-            key={collection}
-            title={collection}
-            stories={getStoriesByCollection(collection)}
-            onRead={handleReadStory}
-          />
-        ))}
+        {collections.map((collection) => {
+          const collectionStories = stories.filter((s) =>
+            s.collections.includes(collection),
+          );
+          return (
+            <StorySection
+              key={collection}
+              title={collection}
+              stories={collectionStories}
+              onRead={handleReadStory}
+            />
+          );
+        })}
 
-        {genres.map((genre) => (
-          <StorySection
-            key={genre}
-            title={genre}
-            stories={getStoriesByGenre(genre)}
-            onRead={handleReadStory}
-          />
-        ))}
+        {genres.map((genre) => {
+          const genreStories = stories.filter((s) => s.genres.includes(genre));
+          return (
+            <StorySection
+              key={genre}
+              title={genre}
+              stories={genreStories}
+              onRead={handleReadStory}
+            />
+          );
+        })}
       </div>
 
       {selectedStory && (
