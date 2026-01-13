@@ -20,7 +20,7 @@ export async function createGenre(input: CreateGenreInput): Promise<Genre> {
     },
     include: {
       stories: true
-    }
+    },
   });
 
   return {
@@ -36,7 +36,7 @@ export async function updateGenre(input: UpdateGenreInput): Promise<Genre> {
     where: { id: input.id },
     include: {
       stories: true
-    }
+    },
   });
 
   if (!existingGenre) {
@@ -52,7 +52,7 @@ export async function updateGenre(input: UpdateGenreInput): Promise<Genre> {
     data: updateData,
     include: {
       stories: true
-    }
+    },
   });
 
   return {

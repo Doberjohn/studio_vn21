@@ -16,23 +16,3 @@ export async function getAllCollections(): Promise<Collection[]> {
     storyCount: collection.stories.length
   }));
 }
-
-export async function getCollectionById(
-  id: string
-): Promise<Collection | null> {
-  const collection = await prisma.collection.findUnique({
-    where: { id },
-    include: {
-      stories: true
-    }
-  });
-
-  if (!collection) return null;
-
-  return {
-    id: collection.id,
-    name: collection.name,
-    isVisible: collection.isVisible,
-    storyCount: collection.stories.length
-  };
-}

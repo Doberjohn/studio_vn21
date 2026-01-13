@@ -16,21 +16,3 @@ export async function getAllGenres(): Promise<Genre[]> {
     storyCount: genre.stories.length
   }));
 }
-
-export async function getGenreById(id: string): Promise<Genre | null> {
-  const genre = await prisma.genre.findUnique({
-    where: { id },
-    include: {
-      stories: true
-    }
-  });
-
-  if (!genre) return null;
-
-  return {
-    id: genre.id,
-    name: genre.name,
-    isVisible: genre.isVisible,
-    storyCount: genre.stories.length
-  };
-}

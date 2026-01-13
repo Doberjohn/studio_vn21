@@ -45,7 +45,7 @@ export async function action({ request, params }: Route.ActionArgs) {
           ?.toString()
           .split(",")
           .map((c) => c.trim())
-          .filter(Boolean) || []
+          .filter(Boolean) || [],
     });
     return redirect("/adminManagementSection/stories");
   } catch (error) {

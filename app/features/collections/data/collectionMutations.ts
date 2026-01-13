@@ -22,7 +22,7 @@ export async function createCollection(
     },
     include: {
       stories: true
-    }
+    },
   });
 
   return {
@@ -40,7 +40,7 @@ export async function updateCollection(
     where: { id: input.id },
     include: {
       stories: true
-    }
+    },
   });
 
   if (!existingCollection) {
@@ -56,7 +56,7 @@ export async function updateCollection(
     data: updateData,
     include: {
       stories: true
-    }
+    },
   });
 
   return {

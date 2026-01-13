@@ -22,26 +22,6 @@ export async function getAllStories(): Promise<Story[]> {
   return stories.map((s) => transformStory(s));
 }
 
-export async function getStoryById(id: string): Promise<Story | null> {
-  const story = await prisma.story.findUnique({
-    where: { id, isVisible: true },
-    include: {
-      genres: {
-        include: {
-          genre: true
-        },
-      },
-      collections: {
-        include: {
-          collection: true
-        },
-      },
-    },
-  });
-
-  return story ? transformStory(story) : null;
-}
-
 export async function getStoryByIdForAdmin(id: string): Promise<Story | null> {
   const story = await prisma.story.findUnique({
     where: { id },
@@ -81,70 +61,6 @@ export async function getFeaturedStory(): Promise<Story | null> {
   });
 
   return story ? transformStory(story) : null;
-}
-
-export async function getStoriesByGenre(genreName: string): Promise<Story[]> {
-  const stories = await prisma.story.findMany({
-    where: {
-      isVisible: true,
-      genres: {
-        some: {
-          genre: {
-            name: genreName,
-            isVisible: true
-          },
-        },
-      },
-    },
-    include: {
-      genres: {
-        include: {
-          genre: true
-        },
-      },
-      collections: {
-        include: {
-          collection: true
-        },
-      },
-    },
-    orderBy: { publishDate: "desc" },
-  });
-
-  return stories.map((s) => transformStory(s));
-}
-
-export async function getStoriesByCollection(
-  collectionName: string,
-): Promise<Story[]> {
-  const stories = await prisma.story.findMany({
-    where: {
-      isVisible: true,
-      collections: {
-        some: {
-          collection: {
-            name: collectionName,
-            isVisible: true
-          },
-        },
-      },
-    },
-    include: {
-      genres: {
-        include: {
-          genre: true
-        },
-      },
-      collections: {
-        include: {
-          collection: true
-        },
-      },
-    },
-    orderBy: { publishDate: "desc" },
-  });
-
-  return stories.map((s) => transformStory(s));
 }
 
 export async function getAllGenres(): Promise<string[]> {

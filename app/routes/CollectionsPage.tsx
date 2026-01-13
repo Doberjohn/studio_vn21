@@ -63,7 +63,7 @@ export default function CollectionsPage({ loaderData }: Route.ComponentProps) {
     if (!searchQuery) return collections;
     const query = searchQuery.toLowerCase();
     return collections.filter((collection) =>
-      collection.name.toLowerCase().includes(query)
+      collection.name.toLowerCase().includes(query),
     );
   }, [collections, searchQuery]);
 

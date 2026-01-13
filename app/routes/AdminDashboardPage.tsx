@@ -28,7 +28,7 @@ export default function AdminDashboardPage() {
               </div>
               <p className="text-gray-400 mb-6">
                 Create, edit, and manage your story collection. Add new stories,
-                update existing ones, and organize your content.
+                update or organize existing ones.
               </p>
               <Button
                 variant="outline"

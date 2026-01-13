@@ -7,6 +7,7 @@ export function Brand({
   className,
   ...props
 }: React.HTMLAttributes<HTMLElement>): React.ReactElement {
+  // noinspection Annotator
   return (
     <nav
       className={cn(
