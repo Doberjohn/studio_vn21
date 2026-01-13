@@ -1,4 +1,4 @@
-import type { Route } from "./+types/AdminPage";
+import type { Route } from "./+types/StoriesPage";
 import { Form, Link, redirect, useNavigation } from "react-router";
 import { Navbar } from "~/shared/components/Navbar";
 import { Button } from "~/shared/components/Button";
@@ -7,13 +7,17 @@ import { deleteStory } from "~/features/stories/data/storyMutations";
 import type { Story } from "~/shared/types/story";
 import { ArrowLeft, Edit, Plus, Search, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
+import { canDelete, requireRole } from "~/shared/auth/auth.server";
 
-export async function loader({}: Route.LoaderArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
+  const user = await requireRole(request, ["ADMIN", "EDITOR"]);
   const stories = await getAllStoriesForAdmin();
-  return { stories };
+  return { stories, user };
 }
 
 export async function action({ request }: Route.ActionArgs) {
+  await requireRole(request, ["ADMIN"]);
+  
   const formData = await request.formData();
   const intent = formData.get("intent") as string;
 
@@ -25,8 +29,8 @@ export async function action({ request }: Route.ActionArgs) {
   return { error: "Invalid action" };
 }
 
-export default function AdminPage({ loaderData }: Route.ComponentProps) {
-  const { stories } = loaderData;
+export default function StoriesPage({ loaderData }: Route.ComponentProps) {
+  const { stories, user } = loaderData;
   const navigation = useNavigation();
   const isSubmitting = navigation.state === "submitting";
 
@@ -189,7 +193,6 @@ export default function AdminPage({ loaderData }: Route.ComponentProps) {
             )}
           </div>
 
-          {/* Filter Panel */}
           {showFilters && (
             <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 space-y-4">
               <div className="grid md:grid-cols-2 gap-4">
@@ -292,6 +295,7 @@ export default function AdminPage({ loaderData }: Route.ComponentProps) {
                   key={story.id}
                   story={story}
                   isSubmitting={isSubmitting}
+                  canDelete={canDelete(user.role)}
                 />
               ))}
             </div>
@@ -304,10 +308,12 @@ export default function AdminPage({ loaderData }: Route.ComponentProps) {
 
 function StoryCard({
                      story,
-                     isSubmitting
+                     isSubmitting,
+                     canDelete: userCanDelete
                    }: {
   story: Story;
   isSubmitting: boolean;
+  canDelete: boolean;
 }) {
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex justify-between items-start">
@@ -346,19 +352,21 @@ function StoryCard({
             Edit
           </Button>
         </Link>
-        <Form method="post">
-          <input type="hidden" name="intent" value="delete" />
-          <input type="hidden" name="id" value={story.id} />
-          <Button
-            type="submit"
-            variant="outline"
-            disabled={isSubmitting}
-            className="flex items-center gap-2 text-red-400 hover:text-red-600"
-          >
-            <Trash2 className="w-4 h-4" />
-            Delete
-          </Button>
-        </Form>
+        {userCanDelete && (
+          <Form method="post">
+            <input type="hidden" name="intent" value="delete" />
+            <input type="hidden" name="id" value={story.id} />
+            <Button
+              type="submit"
+              variant="outline"
+              disabled={isSubmitting}
+              className="flex items-center gap-2 text-red-400 hover:text-red-600"
+            >
+              <Trash2 className="w-4 h-4" />
+              Delete
+            </Button>
+          </Form>
+        )}
       </div>
     </div>
   );

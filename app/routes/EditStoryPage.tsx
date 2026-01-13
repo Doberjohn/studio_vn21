@@ -15,6 +15,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 export async function action({ request, params }: Route.ActionArgs) {
+  await requireRole(request, ["ADMIN", "EDITOR"]);
   const formData = await request.formData();
 
   try {

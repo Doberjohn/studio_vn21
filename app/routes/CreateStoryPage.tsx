@@ -4,8 +4,15 @@ import { Navbar } from "~/shared/components/Navbar";
 import { Button } from "~/shared/components/Button";
 import { createStory } from "~/features/stories/data/storyMutations";
 import { ArrowLeft } from "lucide-react";
+import { requireRole } from "~/shared/auth/auth.server";
+
+export async function loader({ request }: Route.LoaderArgs) {
+  const user = await requireRole(request, ["ADMIN", "EDITOR"]);
+  return { user };
+}
 
 export async function action({ request }: Route.ActionArgs) {
+  await requireRole(request, ["ADMIN", "EDITOR"]);
   const formData = await request.formData();
 
   try {
