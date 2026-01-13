@@ -29,7 +29,7 @@ export async function createStory(input: CreateStoryInput): Promise<Story> {
         create: { name: genreName, isVisible: true }
       });
       return { genreId: genre.id };
-    })
+    }),
   );
 
   const collectionConnections = await Promise.all(
@@ -40,7 +40,7 @@ export async function createStory(input: CreateStoryInput): Promise<Story> {
         create: { name: collectionName, isVisible: true }
       });
       return { collectionId: collection.id };
-    })
+    }),
   );
 
   const story = await prisma.story.create({
@@ -60,12 +60,12 @@ export async function createStory(input: CreateStoryInput): Promise<Story> {
       },
       collections: {
         create: collectionConnections
-      }
+      },
     },
     include: {
       genres: { include: { genre: true } },
       collections: { include: { collection: true } }
-    }
+    },
   });
 
   return {
@@ -91,7 +91,7 @@ export async function updateStory(input: UpdateStoryInput): Promise<Story> {
     include: {
       genres: { include: { genre: true } },
       collections: { include: { collection: true } }
-    }
+    },
   });
 
   if (!existingStory) {
@@ -102,9 +102,11 @@ export async function updateStory(input: UpdateStoryInput): Promise<Story> {
 
   if (storyData.title !== undefined) updateData.title = storyData.title;
   if (storyData.author !== undefined) updateData.author = storyData.author;
-  if (storyData.description !== undefined) updateData.description = storyData.description;
+  if (storyData.description !== undefined)
+    updateData.description = storyData.description;
   if (storyData.content !== undefined) updateData.content = storyData.content;
-  if (storyData.coverImage !== undefined) updateData.coverImage = storyData.coverImage;
+  if (storyData.coverImage !== undefined)
+    updateData.coverImage = storyData.coverImage;
   if (storyData.desktopCoverImage !== undefined) {
     updateData.desktopCoverImage = storyData.desktopCoverImage || null;
   }
@@ -112,8 +114,10 @@ export async function updateStory(input: UpdateStoryInput): Promise<Story> {
     updateData.featuredCoverImage = storyData.featuredCoverImage || null;
   }
   if (publishDate) updateData.publishDate = parseDate(publishDate);
-  if (storyData.featured !== undefined) updateData.featured = storyData.featured;
-  if (storyData.isVisible !== undefined) updateData.isVisible = storyData.isVisible;
+  if (storyData.featured !== undefined)
+    updateData.featured = storyData.featured;
+  if (storyData.isVisible !== undefined)
+    updateData.isVisible = storyData.isVisible;
 
   if (genres) {
     await prisma.storyGenre.deleteMany({
@@ -128,7 +132,7 @@ export async function updateStory(input: UpdateStoryInput): Promise<Story> {
           create: { name: genreName, isVisible: true }
         });
         return { genreId: genre.id };
-      })
+      }),
     );
 
     updateData.genres = {
@@ -149,7 +153,7 @@ export async function updateStory(input: UpdateStoryInput): Promise<Story> {
           create: { name: collectionName, isVisible: true }
         });
         return { collectionId: collection.id };
-      })
+      }),
     );
 
     updateData.collections = {
@@ -163,7 +167,7 @@ export async function updateStory(input: UpdateStoryInput): Promise<Story> {
     include: {
       genres: { include: { genre: true } },
       collections: { include: { collection: true } }
-    }
+    },
   });
 
   return {

@@ -25,15 +25,29 @@ export async function action({ request, params }: Route.ActionArgs) {
       description: formData.get("description") as string,
       content: formData.get("content") as string,
       coverImage: formData.get("coverImage") as string,
-      desktopCoverImage: formData.get("desktopCoverImage") as string || undefined,
-      featuredCoverImage: formData.get("featuredCoverImage") as string || undefined,
+      desktopCoverImage:
+        (formData.get("desktopCoverImage") as string) || undefined,
+      featuredCoverImage:
+        (formData.get("featuredCoverImage") as string) || undefined,
       publishDate: formData.get("publishDate") as string,
       featured: formData.get("featured") === "on",
       isVisible: formData.get("isVisible") === "on",
-      genres: formData.get("genres")?.toString().split(",").map(g => g.trim()).filter(Boolean) || [],
-      collections: formData.get("collections")?.toString().split(",").map(c => c.trim()).filter(Boolean) || []
+      genres:
+        formData
+          .get("genres")
+          ?.toString()
+          .split(",")
+          .map((g) => g.trim())
+          .filter(Boolean) || [],
+      collections:
+        formData
+          .get("collections")
+          ?.toString()
+          .split(",")
+          .map((c) => c.trim())
+          .filter(Boolean) || []
     });
-    return redirect("/storyManagementSection");
+    return redirect("/adminManagementSection/stories");
   } catch (error) {
     return {
       error: error instanceof Error ? error.message : "An error occurred"
@@ -51,8 +65,10 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
     <div className="min-h-screen bg-black text-white">
       <Navbar />
       <div className="container mx-auto px-8 py-16 max-w-4xl">
-        <Link to="/storyManagementSection"
-              className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-6">
+        <Link
+          to="/adminManagementSection/stories"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-6"
+        >
           <ArrowLeft className="w-4 h-4" />
           Back to Stories
         </Link>
@@ -69,7 +85,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
           <Form method="post" className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium mb-2">Title *</label>
+                <label className="block text-sm font-medium mb-2">
+                  Title *
+                </label>
                 <input
                   type="text"
                   name="title"
@@ -80,7 +98,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Author *</label>
+                <label className="block text-sm font-medium mb-2">
+                  Author *
+                </label>
                 <input
                   type="text"
                   name="author"
@@ -92,7 +112,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Description *</label>
+              <label className="block text-sm font-medium mb-2">
+                Description *
+              </label>
               <textarea
                 name="description"
                 required
@@ -103,7 +125,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Content *</label>
+              <label className="block text-sm font-medium mb-2">
+                Content *
+              </label>
               <textarea
                 name="content"
                 required
@@ -115,7 +139,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
 
             <div className="grid md:grid-cols-3 gap-6">
               <div>
-                <label className="block text-sm font-medium mb-2">Cover Image URL *</label>
+                <label className="block text-sm font-medium mb-2">
+                  Cover Image URL *
+                </label>
                 <input
                   type="url"
                   name="coverImage"
@@ -126,7 +152,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Desktop Cover Image URL</label>
+                <label className="block text-sm font-medium mb-2">
+                  Desktop Cover Image URL
+                </label>
                 <input
                   type="url"
                   name="desktopCoverImage"
@@ -136,7 +164,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Featured Cover Image URL</label>
+                <label className="block text-sm font-medium mb-2">
+                  Featured Cover Image URL
+                </label>
                 <input
                   type="url"
                   name="featuredCoverImage"
@@ -148,7 +178,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium mb-2">Publish Date (DD/MM/YYYY) *</label>
+                <label className="block text-sm font-medium mb-2">
+                  Publish Date (DD/MM/YYYY) *
+                </label>
                 <input
                   type="text"
                   name="publishDate"
@@ -161,7 +193,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-2">Genres (comma-separated) *</label>
+                <label className="block text-sm font-medium mb-2">
+                  Genres (comma-separated) *
+                </label>
                 <input
                   type="text"
                   name="genres"
@@ -174,7 +208,9 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Collections (comma-separated)</label>
+              <label className="block text-sm font-medium mb-2">
+                Collections (comma-separated)
+              </label>
               <input
                 type="text"
                 name="collections"
@@ -210,7 +246,7 @@ export default function EditStoryPage({ loaderData }: Route.ComponentProps) {
               <Button type="submit" disabled={isSubmitting}>
                 {isSubmitting ? "Updating..." : "Update Story"}
               </Button>
-              <Link to="/storyManagementSection">
+              <Link to="/adminManagementSection">
                 <Button type="button" variant="outline" disabled={isSubmitting}>
                   Cancel
                 </Button>

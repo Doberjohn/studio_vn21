@@ -8,13 +8,13 @@ export async function getAllStories(): Promise<Story[]> {
       genres: {
         include: {
           genre: true
-        }
+        },
       },
       collections: {
         include: {
           collection: true
-        }
-      }
+        },
+      },
     },
     orderBy: { publishDate: "desc" },
   });
@@ -29,13 +29,13 @@ export async function getStoryById(id: string): Promise<Story | null> {
       genres: {
         include: {
           genre: true
-        }
+        },
       },
       collections: {
         include: {
           collection: true
-        }
-      }
+        },
+      },
     },
   });
 
@@ -49,14 +49,14 @@ export async function getStoryByIdForAdmin(id: string): Promise<Story | null> {
       genres: {
         include: {
           genre: true
-        }
+        },
       },
       collections: {
         include: {
           collection: true
-        }
-      }
-    }
+        },
+      },
+    },
   });
 
   return story ? transformStory(story, false) : null;
@@ -69,13 +69,13 @@ export async function getFeaturedStory(): Promise<Story | null> {
       genres: {
         include: {
           genre: true
-        }
+        },
       },
       collections: {
         include: {
           collection: true
-        }
-      }
+        },
+      },
     },
     orderBy: { publishDate: "desc" },
   });
@@ -100,13 +100,13 @@ export async function getStoriesByGenre(genreName: string): Promise<Story[]> {
       genres: {
         include: {
           genre: true
-        }
+        },
       },
       collections: {
         include: {
           collection: true
-        }
-      }
+        },
+      },
     },
     orderBy: { publishDate: "desc" },
   });
@@ -133,13 +133,13 @@ export async function getStoriesByCollection(
       genres: {
         include: {
           genre: true
-        }
+        },
       },
       collections: {
         include: {
           collection: true
-        }
-      }
+        },
+      },
     },
     orderBy: { publishDate: "desc" },
   });
@@ -167,13 +167,13 @@ export async function getAllStoriesForAdmin(): Promise<Story[]> {
       genres: {
         include: {
           genre: true
-        }
+        },
       },
       collections: {
         include: {
           collection: true
-        }
-      }
+        },
+      },
     },
     orderBy: { publishDate: "desc" }
   });
@@ -181,26 +181,28 @@ export async function getAllStoriesForAdmin(): Promise<Story[]> {
   return stories.map((s) => transformStory(s, false));
 }
 
-function transformStory(story: {
-  id: string;
-  title: string;
-  author: string;
-  description: string;
-  content: string;
-  coverImage: string;
-  desktopCoverImage: string | null;
-  featuredCoverImage: string | null;
-  publishDate: Date;
-  featured: boolean;
-  genres: Array<{ genre: { name: string; isVisible: boolean } }>;
-  collections: Array<{ collection: { name: string; isVisible: boolean } }>;
-}, hideInvisibles = true): Story {
-
+function transformStory(
+  story: {
+    id: string;
+    title: string;
+    author: string;
+    description: string;
+    content: string;
+    coverImage: string;
+    desktopCoverImage: string | null;
+    featuredCoverImage: string | null;
+    publishDate: Date;
+    featured: boolean;
+    genres: Array<{ genre: { name: string; isVisible: boolean } }>;
+    collections: Array<{ collection: { name: string; isVisible: boolean } }>;
+  },
+  hideInvisibles = true
+): Story {
   const visibleGenres = story.genres
-    .filter((sg) => hideInvisibles ? sg.genre.isVisible : true)
+    .filter((sg) => (hideInvisibles ? sg.genre.isVisible : true))
     .map((sg) => sg.genre.name);
   const visibleCollections = story.collections
-    .filter((sc) => hideInvisibles ? sc.collection.isVisible : true)
+    .filter((sc) => (hideInvisibles ? sc.collection.isVisible : true))
     .map((sc) => sc.collection.name);
 
   return {
