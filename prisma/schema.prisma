@@ -17,6 +17,7 @@ model Story {
   featuredCoverImage String?
   publishDate       DateTime
   featured          Boolean  @default(false)
+  isVisible         Boolean  @default(true)
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 
@@ -25,18 +26,25 @@ model Story {
 
   @@index([featured])
   @@index([publishDate])
+  @@index([isVisible])
 }
 
 model Genre {
-  id    String @id @default(cuid())
-  name  String @unique
-  stories StoryGenre[]
+  id        String @id @default(cuid())
+  name      String @unique
+  isVisible Boolean @default(true)
+  stories   StoryGenre[]
+
+  @@index([isVisible])
 }
 
 model Collection {
-  id    String @id @default(cuid())
-  name  String @unique
-  stories StoryCollection[]
+  id        String @id @default(cuid())
+  name      String @unique
+  isVisible Boolean @default(true)
+  stories   StoryCollection[]
+
+  @@index([isVisible])
 }
 
 model StoryGenre {

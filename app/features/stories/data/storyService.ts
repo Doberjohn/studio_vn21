@@ -3,9 +3,18 @@ import type { Story } from "~/shared/types/story";
 
 export async function getAllStories(): Promise<Story[]> {
   const stories = await prisma.story.findMany({
+    where: { isVisible: true },
     include: {
-      genres: { include: { genre: true } },
-      collections: { include: { collection: true } },
+      genres: {
+        include: {
+          genre: true
+        }
+      },
+      collections: {
+        include: {
+          collection: true
+        }
+      }
     },
     orderBy: { publishDate: "desc" },
   });
@@ -15,10 +24,18 @@ export async function getAllStories(): Promise<Story[]> {
 
 export async function getStoryById(id: string): Promise<Story | null> {
   const story = await prisma.story.findUnique({
-    where: { id },
+    where: { id, isVisible: true },
     include: {
-      genres: { include: { genre: true } },
-      collections: { include: { collection: true } },
+      genres: {
+        include: {
+          genre: true
+        }
+      },
+      collections: {
+        include: {
+          collection: true
+        }
+      }
     },
   });
 
@@ -27,10 +44,18 @@ export async function getStoryById(id: string): Promise<Story | null> {
 
 export async function getFeaturedStory(): Promise<Story | null> {
   const story = await prisma.story.findFirst({
-    where: { featured: true },
+    where: { featured: true, isVisible: true },
     include: {
-      genres: { include: { genre: true } },
-      collections: { include: { collection: true } },
+      genres: {
+        include: {
+          genre: true
+        }
+      },
+      collections: {
+        include: {
+          collection: true
+        }
+      }
     },
     orderBy: { publishDate: "desc" },
   });
@@ -41,17 +66,27 @@ export async function getFeaturedStory(): Promise<Story | null> {
 export async function getStoriesByGenre(genreName: string): Promise<Story[]> {
   const stories = await prisma.story.findMany({
     where: {
+      isVisible: true,
       genres: {
         some: {
           genre: {
             name: genreName,
+            isVisible: true
           },
         },
       },
     },
     include: {
-      genres: { include: { genre: true } },
-      collections: { include: { collection: true } },
+      genres: {
+        include: {
+          genre: true
+        }
+      },
+      collections: {
+        include: {
+          collection: true
+        }
+      }
     },
     orderBy: { publishDate: "desc" },
   });
@@ -64,17 +99,27 @@ export async function getStoriesByCollection(
 ): Promise<Story[]> {
   const stories = await prisma.story.findMany({
     where: {
+      isVisible: true,
       collections: {
         some: {
           collection: {
             name: collectionName,
+            isVisible: true
           },
         },
       },
     },
     include: {
-      genres: { include: { genre: true } },
-      collections: { include: { collection: true } },
+      genres: {
+        include: {
+          genre: true
+        }
+      },
+      collections: {
+        include: {
+          collection: true
+        }
+      }
     },
     orderBy: { publishDate: "desc" },
   });
@@ -84,6 +129,7 @@ export async function getStoriesByCollection(
 
 export async function getAllGenres(): Promise<string[]> {
   const genres = await prisma.genre.findMany({
+    where: { isVisible: true },
     orderBy: { name: "asc" },
   });
   return genres.map((g) => g.name);
@@ -91,6 +137,7 @@ export async function getAllGenres(): Promise<string[]> {
 
 export async function getAllCollections(): Promise<string[]> {
   const collections = await prisma.collection.findMany({
+    where: { isVisible: true },
     orderBy: { name: "asc" },
   });
   return collections.map((c) => c.name);
@@ -107,15 +154,23 @@ function transformStory(story: {
   featuredCoverImage: string | null;
   publishDate: Date;
   featured: boolean;
-  genres: Array<{ genre: { name: string } }>;
-  collections: Array<{ collection: { name: string } }>;
+  genres: Array<{ genre: { name: string; isVisible: boolean } }>;
+  collections: Array<{ collection: { name: string; isVisible: boolean } }>;
 }): Story {
+  // Filter out invisible genres and collections
+  const visibleGenres = story.genres
+    .filter((sg) => sg.genre.isVisible)
+    .map((sg) => sg.genre.name);
+  const visibleCollections = story.collections
+    .filter((sc) => sc.collection.isVisible)
+    .map((sc) => sc.collection.name);
+
   return {
     id: story.id,
     title: story.title,
     author: story.author,
-    genres: story.genres.map((sg) => sg.genre.name),
-    collections: story.collections.map((sc) => sc.collection.name),
+    genres: visibleGenres,
+    collections: visibleCollections,
     description: story.description,
     coverImage: story.coverImage,
     desktopCoverImage: story.desktopCoverImage ?? undefined,
