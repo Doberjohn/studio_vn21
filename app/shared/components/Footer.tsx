@@ -120,12 +120,13 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+        <div
+          className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4 text-white text-sm">
           <p>© {new Date().getFullYear()} Studio VN21. All rights reserved.</p>
           <p>
             Designed and developed by{" "}
             <a
-              className="underline hover:text-gray-300 transition-colors"
+              className="underline hover:text-red-600 transition-colors"
               href="https://www.recurssive.com"
             >
               Recurssive
