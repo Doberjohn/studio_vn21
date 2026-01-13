@@ -9,7 +9,7 @@ interface FeaturedProps {
 export function StoryFeatured({ story, onRead }: FeaturedProps) {
   return (
     <section
-      className="relative mt-10 h-[60vh] w-full"
+      className="relative h-[60vh] w-full"
       aria-labelledby="featured-story-title"
     >
       <div className="absolute inset-0">
