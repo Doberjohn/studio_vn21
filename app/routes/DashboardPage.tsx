@@ -28,15 +28,13 @@ export async function loader({}: Route.LoaderArgs) {
   } catch (error) {
     console.error("Dashboard loader error:", error);
     const errorMessage =
-      error instanceof Error
-        ? error.message
-        : "Failed to load dashboard data";
-    
+      error instanceof Error ? error.message : "Failed to load dashboard data";
+
     // Log more details in production for debugging
     if (error instanceof Error && error.stack) {
       console.error("Error stack:", error.stack);
     }
-    
+
     // Check if it's a database connection error
     if (
       error instanceof Error &&
@@ -46,10 +44,10 @@ export async function loader({}: Route.LoaderArgs) {
     ) {
       throw new Response(
         "Database connection failed. Please check your DATABASE_URL environment variable.",
-        { status: 500 }
+        { status: 500 },
       );
     }
-    
+
     // Re-throw to trigger ErrorBoundary
     throw new Response(errorMessage, { status: 500 });
   }
