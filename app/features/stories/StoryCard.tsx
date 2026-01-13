@@ -1,4 +1,3 @@
-import React from "react";
 import { Clock } from "lucide-react";
 import type { Story } from "~/shared/types/story";
 import { readingTime } from "reading-time-estimator";

@@ -1,5 +1,4 @@
 import { Clock, LibraryBig, UserStar } from "lucide-react";
-import React from "react";
 
 export function LandingAdvantages() {
   return (

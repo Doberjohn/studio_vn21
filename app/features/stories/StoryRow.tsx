@@ -1,9 +1,7 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import React, { useMemo } from "react";
 import { StoryCard } from "./StoryCard";
 import type { Story } from "~/shared/types/story";
 import { useHorizontalScroll } from "~/shared/hooks/useHorizontalScroll";
-import { shuffle } from "~/shared/utils/shuffle";
 
 interface StoryRowProps {
   title: string;
@@ -14,10 +12,6 @@ interface StoryRowProps {
 export function StoryRow({ title, stories, onRead }: StoryRowProps) {
   const { scrollContainerRef, showLeftArrow, showRightArrow, scroll } =
     useHorizontalScroll();
-
-  const randomizedStories = useMemo(() => {
-    return shuffle(stories);
-  }, [stories]);
 
   return (
     <section
@@ -46,7 +40,7 @@ export function StoryRow({ title, stories, onRead }: StoryRowProps) {
           className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {randomizedStories.map((story) => (
+          {stories.map((story) => (
             <div key={story.id} className="shrink-0 w-48 md:w-80">
               <StoryCard story={story} onRead={onRead} />
             </div>

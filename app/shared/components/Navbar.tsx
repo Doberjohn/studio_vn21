@@ -1,5 +1,4 @@
 import { Search, Bell } from "lucide-react";
-import React from "react";
 import { Button } from "./Button";
 import { Brand } from "./Brand";
 

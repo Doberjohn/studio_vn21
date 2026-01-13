@@ -1,7 +1,6 @@
 import { Link } from "react-router";
 import { Button } from "~/shared/components/Button";
 import { BookOpen } from "lucide-react";
-import React from "react";
 
 export function LandingHero() {
   return (

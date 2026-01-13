@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
+    "build": "prisma generate && react-router build",
     "dev": "react-router dev",
     "dev:clean": "Remove-Item -Recurse -Force node_modules/.vite -ErrorAction SilentlyContinue; react-router dev",
     "start": "react-router-serve ./build/server/index.js",

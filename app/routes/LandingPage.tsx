@@ -1,6 +1,5 @@
 import type { Route } from "./+types/LandingPage";
 import { Button } from "~/shared/components/Button";
-import React from "react";
 import { Link } from "react-router";
 import {
   LandingAdvantages,
