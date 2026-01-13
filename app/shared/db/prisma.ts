@@ -7,9 +7,21 @@ const globalForPrisma = globalThis as unknown as {
   pool: Pool | undefined;
 };
 
+// For serverless environments, use connection pooling with limits
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) {
+  throw new Error("DATABASE_URL environment variable is not set");
+}
+
 const pool =
   globalForPrisma.pool ??
-  new Pool({ connectionString: process.env.DATABASE_URL });
+  new Pool({
+    connectionString,
+    // Serverless-friendly connection pool settings
+    max: 1, // Limit connections for serverless
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 10000,
+  });
 
 if (process.env.NODE_ENV !== "production") globalForPrisma.pool = pool;
 

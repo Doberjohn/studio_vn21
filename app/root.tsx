@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import {
   isRouteErrorResponse,
   Links,
@@ -61,9 +61,13 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       error.status === 404
         ? "The requested page could not be found."
         : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
+  } else if (error && error instanceof Error) {
+    // Log error in production for debugging
+    if (!import.meta.env.DEV) {
+      console.error("ErrorBoundary caught error:", error);
+    }
     details = error.message;
-    stack = error.stack;
+    stack = import.meta.env.DEV ? error.stack : undefined;
   }
 
   return (
