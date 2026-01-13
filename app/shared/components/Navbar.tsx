@@ -1,4 +1,5 @@
-import { Search, Bell } from "lucide-react";
+import { Bell, Search } from "lucide-react";
+import { Link } from "react-router";
 import { Button } from "./Button";
 import { Brand } from "./Brand";
 
@@ -6,7 +7,9 @@ export function Navbar() {
   return (
     <Brand>
       <div className="hidden md:flex gap-6">
-        <Button variant="nav">Home</Button>
+        <Link to="/dashboard">
+          <Button variant="nav">Home</Button>
+        </Link>
         <Button variant="nav">Genres</Button>
         <Button variant="nav">Trending</Button>
         <Button variant="nav">My List</Button>

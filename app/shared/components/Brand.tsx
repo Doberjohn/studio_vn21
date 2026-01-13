@@ -1,4 +1,5 @@
 import { cn } from "~/shared/utils/cn";
+import { Link } from "react-router";
 
 export function Brand({
   children,
@@ -14,7 +15,9 @@ export function Brand({
       {...props}
     >
       <div className="flex items-center justify-between">
-        <h1 className="text-white text-xl tracking-wider">Studio VN21</h1>
+        <Link to="/">
+          <h1 className="text-white text-xl tracking-wider">Studio VN21</h1>
+        </Link>
         {children}
       </div>
     </nav>

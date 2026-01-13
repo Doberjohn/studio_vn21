@@ -19,7 +19,7 @@ export async function getAllStories(): Promise<Story[]> {
     orderBy: { publishDate: "desc" },
   });
 
-  return stories.map(transformStory);
+  return stories.map((s) => transformStory(s));
 }
 
 export async function getStoryById(id: string): Promise<Story | null> {
@@ -91,7 +91,7 @@ export async function getStoriesByGenre(genreName: string): Promise<Story[]> {
     orderBy: { publishDate: "desc" },
   });
 
-  return stories.map(transformStory);
+  return stories.map((s) => transformStory(s));
 }
 
 export async function getStoriesByCollection(
@@ -124,12 +124,11 @@ export async function getStoriesByCollection(
     orderBy: { publishDate: "desc" },
   });
 
-  return stories.map(transformStory);
+  return stories.map((s) => transformStory(s));
 }
 
 export async function getAllGenres(): Promise<string[]> {
   const genres = await prisma.genre.findMany({
-    where: { isVisible: true },
     orderBy: { name: "asc" },
   });
   return genres.map((g) => g.name);
@@ -137,10 +136,29 @@ export async function getAllGenres(): Promise<string[]> {
 
 export async function getAllCollections(): Promise<string[]> {
   const collections = await prisma.collection.findMany({
-    where: { isVisible: true },
     orderBy: { name: "asc" },
   });
   return collections.map((c) => c.name);
+}
+
+export async function getAllStoriesForAdmin(): Promise<Story[]> {
+  const stories = await prisma.story.findMany({
+    include: {
+      genres: {
+        include: {
+          genre: true
+        }
+      },
+      collections: {
+        include: {
+          collection: true
+        }
+      }
+    },
+    orderBy: { publishDate: "desc" }
+  });
+
+  return stories.map((s) => transformStory(s, false));
 }
 
 function transformStory(story: {
@@ -156,13 +174,13 @@ function transformStory(story: {
   featured: boolean;
   genres: Array<{ genre: { name: string; isVisible: boolean } }>;
   collections: Array<{ collection: { name: string; isVisible: boolean } }>;
-}): Story {
-  // Filter out invisible genres and collections
+}, hideInvisibles = true): Story {
+
   const visibleGenres = story.genres
-    .filter((sg) => sg.genre.isVisible)
+    .filter((sg) => hideInvisibles ? sg.genre.isVisible : true)
     .map((sg) => sg.genre.name);
   const visibleCollections = story.collections
-    .filter((sc) => sc.collection.isVisible)
+    .filter((sc) => hideInvisibles ? sc.collection.isVisible : true)
     .map((sc) => sc.collection.name);
 
   return {
