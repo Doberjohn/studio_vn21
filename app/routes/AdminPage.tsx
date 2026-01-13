@@ -19,7 +19,7 @@ export async function action({ request }: Route.ActionArgs) {
 
   try {
     if (intent === "create") {
-      const story = await createStory({
+      await createStory({
         title: formData.get("title") as string,
         author: formData.get("author") as string,
         description: formData.get("description") as string,
@@ -37,7 +37,7 @@ export async function action({ request }: Route.ActionArgs) {
     }
 
     if (intent === "update") {
-      const story = await updateStory({
+      await updateStory({
         id: formData.get("id") as string,
         title: formData.get("title") as string,
         author: formData.get("author") as string,
@@ -70,7 +70,6 @@ export async function action({ request }: Route.ActionArgs) {
 
 export default function AdminPage({ loaderData }: Route.ComponentProps) {
   const { stories } = loaderData;
-  console.log({ stories });
   const actionData = useActionData<{ error?: string }>();
   const navigation = useNavigation();
   const [editingStory, setEditingStory] = useState<Story | null>(null);
