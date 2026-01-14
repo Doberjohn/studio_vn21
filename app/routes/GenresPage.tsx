@@ -1,12 +1,23 @@
 import type { Route } from "./+types/GenresPage";
-import { Form, Link, redirect, useActionData, useNavigation } from "react-router";
+import {
+  Form,
+  Link,
+  redirect,
+  useActionData,
+  useNavigation
+} from "react-router";
 import { Navbar } from "~/shared/components/Navbar";
 import { Button } from "~/shared/components/Button";
 import { getAllGenres } from "~/features/genres/data/genreService";
-import { createGenre, deleteGenre, updateGenre } from "~/features/genres/data/genreMutations";
+import {
+  createGenre,
+  deleteGenre,
+  updateGenre
+} from "~/features/genres/data/genreMutations";
 import { ArrowLeft, Edit, Plus, Search, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
-import { canDelete, requireRole } from "~/shared/auth/auth.server";
+import { requireRole } from "~/shared/auth/auth.server";
+import { canDelete } from "~/shared/auth/permissions";
 
 export async function loader({ request }: Route.LoaderArgs) {
   const user = await requireRole(request, ["ADMIN", "EDITOR"]);

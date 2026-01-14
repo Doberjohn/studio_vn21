@@ -2,7 +2,12 @@ import type { Route } from "./+types/DashboardPage";
 import { useState } from "react";
 import { Navbar } from "~/shared/components/Navbar";
 import { StoryFeatured, StoryReader, StoryRow } from "~/features/stories";
-import { getAllCollections, getAllGenres, getAllStories, getFeaturedStory } from "~/features/stories/data/storyService";
+import {
+  getAllCollections,
+  getAllGenres,
+  getAllStories,
+  getFeaturedStory
+} from "~/features/stories/data/storyService";
 import type { Story } from "~/shared/types/story";
 
 export async function loader({}: Route.LoaderArgs) {

@@ -1,8 +1,8 @@
 import { createServerClient } from "@supabase/ssr";
 
 export function createClient(request: Request) {
-  const supabaseUrl = process.env.SUPABASE_URL;
-  const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+  const supabaseUrl = process.env.VITE_SUPABASE_URL;
+  const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
 
   if (!supabaseUrl || !supabaseAnonKey) {
     throw new Error("Missing Supabase environment variables");
@@ -22,11 +22,8 @@ export function createClient(request: Request) {
           };
         });
       },
-      setAll(cookiesToSet) {
-        // In React Router v7, cookies are set via Response headers
-        // The @supabase/ssr package will handle this through the response
-        // We store cookies to be set in a way that React Router can handle
+      setAll(_cookiesToSet) {
       }
-    }
+    },
   });
 }

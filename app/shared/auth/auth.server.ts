@@ -9,7 +9,9 @@ export interface AuthenticatedUser {
   authUserId: string;
 }
 
-export async function getUser(request: Request): Promise<AuthenticatedUser | null> {
+export async function getUser(
+  request: Request
+): Promise<AuthenticatedUser | null> {
   const supabase = createClient(request);
 
   const {
@@ -37,11 +39,15 @@ export async function getUser(request: Request): Promise<AuthenticatedUser | nul
   };
 }
 
-export async function requireAuth(request: Request): Promise<AuthenticatedUser> {
+export async function requireAuth(
+  request: Request
+): Promise<AuthenticatedUser> {
   const user = await getUser(request);
 
   if (!user) {
-    throw redirect("/login?redirect=" + encodeURIComponent(new URL(request.url).pathname));
+    throw redirect(
+      "/login?redirect=" + encodeURIComponent(new URL(request.url).pathname)
+    );
   }
 
   return user;
@@ -58,23 +64,4 @@ export async function requireRole(
   }
 
   return user;
-}
-
-export async function getUserRole(
-  request: Request
-): Promise<"ADMIN" | "EDITOR" | "VIEWER" | null> {
-  const user = await getUser(request);
-  return user?.role ?? null;
-}
-
-export function canDelete(role: "ADMIN" | "EDITOR" | "VIEWER"): boolean {
-  return role === "ADMIN";
-}
-
-export function canEdit(role: "ADMIN" | "EDITOR" | "VIEWER"): boolean {
-  return role === "ADMIN" || role === "EDITOR";
-}
-
-export function canView(role: "ADMIN" | "EDITOR" | "VIEWER"): boolean {
-  return true; // All roles can view
 }

@@ -1,12 +1,23 @@
 import type { Route } from "./+types/CollectionsPage";
-import { Form, Link, redirect, useActionData, useNavigation } from "react-router";
+import {
+  Form,
+  Link,
+  redirect,
+  useActionData,
+  useNavigation
+} from "react-router";
 import { Navbar } from "~/shared/components/Navbar";
 import { Button } from "~/shared/components/Button";
 import { getAllCollections } from "~/features/collections/data/collectionService";
-import { createCollection, deleteCollection, updateCollection } from "~/features/collections/data/collectionMutations";
+import {
+  createCollection,
+  deleteCollection,
+  updateCollection
+} from "~/features/collections/data/collectionMutations";
 import { ArrowLeft, Edit, Plus, Search, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
-import { canDelete, requireRole } from "~/shared/auth/auth.server";
+import { requireRole } from "~/shared/auth/auth.server";
+import { canDelete } from "~/shared/auth/permissions";
 
 export async function loader({ request }: Route.LoaderArgs) {
   const user = await requireRole(request, ["ADMIN", "EDITOR"]);

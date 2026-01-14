@@ -10,7 +10,9 @@ export async function loader({ request }: Route.LoaderArgs) {
   return { user };
 }
 
-export default function AdminDashboardPage({ loaderData }: Route.ComponentProps) {
+export default function AdminDashboardPage({
+                                             loaderData
+                                           }: Route.ComponentProps) {
   const { user } = loaderData;
   return (
     <div className="min-h-screen bg-black text-white">

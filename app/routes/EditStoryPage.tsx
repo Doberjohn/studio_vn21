@@ -1,10 +1,17 @@
 import type { Route } from "./+types/EditStoryPage";
-import { Form, Link, redirect, useActionData, useNavigation } from "react-router";
+import {
+  Form,
+  Link,
+  redirect,
+  useActionData,
+  useNavigation
+} from "react-router";
 import { Navbar } from "~/shared/components/Navbar";
 import { Button } from "~/shared/components/Button";
 import { getStoryByIdForAdmin } from "~/features/stories/data/storyService";
 import { updateStory } from "~/features/stories/data/storyMutations";
 import { ArrowLeft } from "lucide-react";
+import { requireRole } from "~/shared/auth/auth.server";
 
 export async function loader({ params }: Route.LoaderArgs) {
   const story = await getStoryByIdForAdmin(params.id!);

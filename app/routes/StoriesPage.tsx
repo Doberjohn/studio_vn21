@@ -7,7 +7,8 @@ import { deleteStory } from "~/features/stories/data/storyMutations";
 import type { Story } from "~/shared/types/story";
 import { ArrowLeft, Edit, Plus, Search, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
-import { canDelete, requireRole } from "~/shared/auth/auth.server";
+import { requireRole } from "~/shared/auth/auth.server";
+import { canDelete } from "~/shared/auth/permissions";
 
 export async function loader({ request }: Route.LoaderArgs) {
   const user = await requireRole(request, ["ADMIN", "EDITOR"]);
@@ -17,7 +18,7 @@ export async function loader({ request }: Route.LoaderArgs) {
 
 export async function action({ request }: Route.ActionArgs) {
   await requireRole(request, ["ADMIN"]);
-  
+
   const formData = await request.formData();
   const intent = formData.get("intent") as string;
 
