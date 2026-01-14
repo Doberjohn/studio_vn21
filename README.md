@@ -1,6 +1,6 @@
-# Welcome to React Router!
+# Studio VN21
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern, production-ready story reading platform built with React Router v7, Prisma, and Supabase.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
 
@@ -81,6 +81,39 @@ Make sure to deploy the output of `npm run build`
 ## Styling
 
 This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+
+## Environment Variables
+
+Required environment variables:
+
+```env
+# Database
+DATABASE_URL="postgresql://user:password@host:5432/database"
+
+# Supabase Authentication
+SUPABASE_URL="https://your-project.supabase.co"
+SUPABASE_ANON_KEY="your-anon-key"
+SUPABASE_SERVICE_ROLE_KEY="your-service-role-key" # Optional, for server-side operations
+```
+
+### Getting Supabase Credentials
+
+1. Go to your Supabase project dashboard
+2. Navigate to **Settings** → **API**
+3. Copy:
+   - **Project URL** → `SUPABASE_URL`
+   - **anon/public key** → `SUPABASE_ANON_KEY`
+   - **service_role key** → `SUPABASE_SERVICE_ROLE_KEY` (keep secret!)
+
+### Setting Up Authentication
+
+1. Enable Email/Password authentication in Supabase:
+   - Go to **Authentication** → **Providers**
+   - Enable "Email" provider
+2. Create your first admin user:
+   - Go to **Authentication** → **Users**
+   - Click "Add user" → Create user with email/password
+   - The first user will automatically get ADMIN role on first login
 
 ---
 

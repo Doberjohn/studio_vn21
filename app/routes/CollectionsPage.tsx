@@ -1,18 +1,32 @@
 import type { Route } from "./+types/CollectionsPage";
-import { Form, Link, redirect, useActionData, useNavigation } from "react-router";
+import {
+  Form,
+  Link,
+  redirect,
+  useActionData,
+  useNavigation
+} from "react-router";
 import { Navbar } from "~/shared/components/Navbar";
 import { Button } from "~/shared/components/Button";
 import { getAllCollections } from "~/features/collections/data/collectionService";
-import { createCollection, deleteCollection, updateCollection } from "~/features/collections/data/collectionMutations";
+import {
+  createCollection,
+  deleteCollection,
+  updateCollection
+} from "~/features/collections/data/collectionMutations";
 import { ArrowLeft, Edit, Plus, Search, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
+import { requireRole } from "~/shared/auth/auth.server";
+import { canDelete } from "~/shared/auth/permissions";
 
-export async function loader({}: Route.LoaderArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
+  const user = await requireRole(request, ["ADMIN", "EDITOR"]);
   const collections = await getAllCollections();
-  return { collections };
+  return { collections, user };
 }
 
 export async function action({ request }: Route.ActionArgs) {
+  const user = await requireRole(request, ["ADMIN", "EDITOR"]);
   const formData = await request.formData();
   const intent = formData.get("intent") as string;
 
@@ -35,6 +49,10 @@ export async function action({ request }: Route.ActionArgs) {
     }
 
     if (intent === "delete") {
+      // Only admins can delete
+      if (user.role !== "ADMIN") {
+        return { error: "Only admins can delete collections" };
+      }
       await deleteCollection(formData.get("id") as string);
       return redirect("/adminManagementSection/collections");
     }
@@ -48,7 +66,7 @@ export async function action({ request }: Route.ActionArgs) {
 }
 
 export default function CollectionsPage({ loaderData }: Route.ComponentProps) {
-  const { collections } = loaderData;
+  const { collections, user } = loaderData;
   const actionData = useActionData<{ error?: string }>();
   const navigation = useNavigation();
   const [editingCollection, setEditingCollection] = useState<
@@ -166,6 +184,7 @@ export default function CollectionsPage({ loaderData }: Route.ComponentProps) {
                     setShowForm(true);
                   }}
                   isSubmitting={isSubmitting}
+                  canDelete={canDelete(user.role)}
                 />
               ))}
             </div>
@@ -179,7 +198,8 @@ export default function CollectionsPage({ loaderData }: Route.ComponentProps) {
 function CollectionCard({
                           collection,
                           onEdit,
-                          isSubmitting
+                          isSubmitting,
+                          canDelete: userCanDelete
                         }: {
   collection: {
     id: string;
@@ -189,6 +209,7 @@ function CollectionCard({
   };
   onEdit: () => void;
   isSubmitting: boolean;
+  canDelete: boolean;
 }) {
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex justify-between items-start">
@@ -216,19 +237,21 @@ function CollectionCard({
           <Edit className="w-4 h-4" />
           Edit
         </Button>
-        <Form method="post">
-          <input type="hidden" name="intent" value="delete" />
-          <input type="hidden" name="id" value={collection.id} />
-          <Button
-            type="submit"
-            variant="outline"
-            disabled={isSubmitting}
-            className="flex items-center gap-2 text-red-400 hover:text-red-600"
-          >
-            <Trash2 className="w-4 h-4" />
-            Delete
-          </Button>
-        </Form>
+        {userCanDelete && (
+          <Form method="post">
+            <input type="hidden" name="intent" value="delete" />
+            <input type="hidden" name="id" value={collection.id} />
+            <Button
+              type="submit"
+              variant="outline"
+              disabled={isSubmitting}
+              className="flex items-center gap-2 text-red-400 hover:text-red-600"
+            >
+              <Trash2 className="w-4 h-4" />
+              Delete
+            </Button>
+          </Form>
+        )}
       </div>
     </div>
   );

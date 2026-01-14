@@ -1,18 +1,32 @@
 import type { Route } from "./+types/GenresPage";
-import { Form, Link, redirect, useActionData, useNavigation } from "react-router";
+import {
+  Form,
+  Link,
+  redirect,
+  useActionData,
+  useNavigation
+} from "react-router";
 import { Navbar } from "~/shared/components/Navbar";
 import { Button } from "~/shared/components/Button";
 import { getAllGenres } from "~/features/genres/data/genreService";
-import { createGenre, deleteGenre, updateGenre } from "~/features/genres/data/genreMutations";
+import {
+  createGenre,
+  deleteGenre,
+  updateGenre
+} from "~/features/genres/data/genreMutations";
 import { ArrowLeft, Edit, Plus, Search, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
+import { requireRole } from "~/shared/auth/auth.server";
+import { canDelete } from "~/shared/auth/permissions";
 
-export async function loader({}: Route.LoaderArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
+  const user = await requireRole(request, ["ADMIN", "EDITOR"]);
   const genres = await getAllGenres();
-  return { genres };
+  return { genres, user };
 }
 
 export async function action({ request }: Route.ActionArgs) {
+  const user = await requireRole(request, ["ADMIN", "EDITOR"]);
   const formData = await request.formData();
   const intent = formData.get("intent") as string;
 
@@ -35,6 +49,10 @@ export async function action({ request }: Route.ActionArgs) {
     }
 
     if (intent === "delete") {
+      // Only admins can delete
+      if (user.role !== "ADMIN") {
+        return { error: "Only admins can delete genres" };
+      }
       await deleteGenre(formData.get("id") as string);
       return redirect("/adminManagementSection/genres");
     }
@@ -48,7 +66,7 @@ export async function action({ request }: Route.ActionArgs) {
 }
 
 export default function GenresPage({ loaderData }: Route.ComponentProps) {
-  const { genres } = loaderData;
+  const { genres, user } = loaderData;
   const actionData = useActionData<{ error?: string }>();
   const navigation = useNavigation();
   const [editingGenre, setEditingGenre] = useState<(typeof genres)[0] | null>(
@@ -164,6 +182,7 @@ export default function GenresPage({ loaderData }: Route.ComponentProps) {
                     setShowForm(true);
                   }}
                   isSubmitting={isSubmitting}
+                  canDelete={canDelete(user.role)}
                 />
               ))}
             </div>
@@ -177,11 +196,13 @@ export default function GenresPage({ loaderData }: Route.ComponentProps) {
 function GenreCard({
                      genre,
                      onEdit,
-                     isSubmitting
+                     isSubmitting,
+                     canDelete: userCanDelete
                    }: {
   genre: { id: string; name: string; isVisible: boolean; storyCount?: number };
   onEdit: () => void;
   isSubmitting: boolean;
+  canDelete: boolean;
 }) {
   return (
     <div className="bg-gray-900 border border-gray-800 rounded-lg p-6 flex justify-between items-start">
@@ -208,19 +229,21 @@ function GenreCard({
           <Edit className="w-4 h-4" />
           Edit
         </Button>
-        <Form method="post">
-          <input type="hidden" name="intent" value="delete" />
-          <input type="hidden" name="id" value={genre.id} />
-          <Button
-            type="submit"
-            variant="outline"
-            disabled={isSubmitting}
-            className="flex items-center gap-2 text-red-400 hover:text-red-600"
-          >
-            <Trash2 className="w-4 h-4" />
-            Delete
-          </Button>
-        </Form>
+        {userCanDelete && (
+          <Form method="post">
+            <input type="hidden" name="intent" value="delete" />
+            <input type="hidden" name="id" value={genre.id} />
+            <Button
+              type="submit"
+              variant="outline"
+              disabled={isSubmitting}
+              className="flex items-center gap-2 text-red-400 hover:text-red-600"
+            >
+              <Trash2 className="w-4 h-4" />
+              Delete
+            </Button>
+          </Form>
+        )}
       </div>
     </div>
   );

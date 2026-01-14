@@ -5,8 +5,10 @@ import { Button } from "~/shared/components/Button";
 import { getStoryByIdForAdmin } from "~/features/stories/data/storyService";
 import { updateStory } from "~/features/stories/data/storyMutations";
 import { ArrowLeft } from "lucide-react";
+import { requireRole } from "~/shared/auth/auth.server";
 
-export async function loader({ params }: Route.LoaderArgs) {
+export async function loader({ request, params }: Route.LoaderArgs) {
+  await requireRole(request, ["ADMIN", "EDITOR"]);
   const story = await getStoryByIdForAdmin(params.id!);
   if (!story) {
     throw new Response("Story not found", { status: 404 });
@@ -15,6 +17,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 }
 
 export async function action({ request, params }: Route.ActionArgs) {
+  await requireRole(request, ["ADMIN", "EDITOR"]);
   const formData = await request.formData();
 
   try {
